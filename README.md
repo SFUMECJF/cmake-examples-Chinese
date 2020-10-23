@@ -14,12 +14,19 @@ CMake是一个跨平台的安装（编译）工具，可以用简单的语句来
 在github下载所有cmake文档：[cmake-examples-Chinese](https://github.com/SFUMECJF/cmake-examples-Chinese)
 **觉得有用的话，希望给个star哦～**
 [视觉笔记CMake(一)hello-cmake](https://blog.csdn.net/weixin_42089190/article/details/104896748)
+
 [视觉笔记CMake(二)hello-headers](https://blog.csdn.net/weixin_42089190/article/details/105046533)
+
 [视觉笔记CMake（三）Static Library](https://blog.csdn.net/weixin_42089190/article/details/105343675)
+
 [视觉笔记CMake（四）Shared Library](https://blog.csdn.net/weixin_42089190/article/details/106058822)
+
 [视觉笔记CMake（五）build-type](https://blog.csdn.net/weixin_42089190/article/details/106420270)
+
 [视觉笔记CMake（六） Compile Flags](https://blog.csdn.net/weixin_42089190/article/details/106836208)
+
 [视觉笔记CMake（七） Including Third Party Library](https://blog.csdn.net/weixin_42089190/article/details/108942491)
+
 [视觉笔记CMake-scope](https://blog.csdn.net/weixin_42089190/article/details/105357050)
 
 如果没什么精力，看到[视觉笔记CMake（六） Compile Flags](https://blog.csdn.net/weixin_42089190/article/details/106836208)基本上就可以了。
