@@ -1,8 +1,8 @@
 # cmake-examples-Chinese
 Translate the github address：   https://github.com/ttroy50/cmake-examples
 
-CSDN专栏：https://blog.csdn.net/weixin_42089190/category_10449170.html
-如果对您有用，希望给个star
+
+**觉得有用的话，希望给个star哦～**
 ##  什么是cmake
 CMake是一个跨平台的安装（编译）工具，可以用简单的语句来描述所有平台的安装(编译过程)。他能够输出各种各样的makefile或者project文件，CMake 的组态档取名为 CMakeLists.txt。也就是在CMakeLists.txt这个文件中写cmake代码。
 一句话：cmake就是将多个cpp、hpp文件组合构建为一个大工程的语言。
@@ -17,6 +17,7 @@ git clone https://github.com/SFUMECJF/cmake-examples-Chinese.git
 ```
 ##  CSDN地址
 其实和本github的内容是一样的。
+CSDN专栏：https://blog.csdn.net/weixin_42089190/category_10449170.html
 
 [视觉笔记CMake(一)hello-cmake](https://blog.csdn.net/weixin_42089190/article/details/104896748)
 
@@ -34,7 +35,7 @@ git clone https://github.com/SFUMECJF/cmake-examples-Chinese.git
 
 [视觉笔记CMake-scope](https://blog.csdn.net/weixin_42089190/article/details/105357050)
 
-**觉得有用的话，希望给个star哦～**
+
 
 如果没什么精力，看到[视觉笔记CMake（六） Compile Flags](https://blog.csdn.net/weixin_42089190/article/details/106836208)基本上就可以了。
 ##  微信公众号
