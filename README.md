@@ -1,5 +1,6 @@
 # cmake-examples-Chinese
-Translate the github address：   https://github.com/ttroy50/cmake-examples
+该CMake推荐学习方式是通过阅读再现阅读电子书。（也即gitPages分支）在线阅读地址：[通过例子学习CMake]（https://sfumecjf.github.io/cmake-examples-Chinese/）
+此外，也可下载main分支，在Linux平台上运行相关代码。加深理解。如果不运行，其实在电子书中也有编译输出结果。
 
 
 **觉得有用的话，希望给个star哦～**
