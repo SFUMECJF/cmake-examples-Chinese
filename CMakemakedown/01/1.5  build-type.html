@@ -1,0 +1,601 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.5  设置构建类型 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1.6  Compile Flags.html" />
+    
+    
+    <link rel="prev" href="1.4  Shared Library.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    1  基本例程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.1  hello-cmake.html">
+            
+                <a href="1.1  hello-cmake.html">
+            
+                    
+                    1.1  hello-CMake
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="1.2  hello-headers.html">
+            
+                <a href="1.2  hello-headers.html">
+            
+                    
+                    1.2  包含头文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1.3  Static Library.html">
+            
+                <a href="1.3  Static Library.html">
+            
+                    
+                    1.3  包含静态库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="1.4  Shared Library.html">
+            
+                <a href="1.4  Shared Library.html">
+            
+                    
+                    1.4  包含动态库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.5" data-path="1.5  build-type.html">
+            
+                <a href="1.5  build-type.html">
+            
+                    
+                    1.5  设置构建类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="1.6  Compile Flags.html">
+            
+                <a href="1.6  Compile Flags.html">
+            
+                    
+                    1.6  设置编译方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="1.7  Including Third Party Library.html">
+            
+                <a href="1.7  Including Third Party Library.html">
+            
+                    
+                    1.7  包含第三方库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="1.8  hello-cmake.html">
+            
+                <a href="1.8  hello-cmake.html">
+            
+                    
+                    1.8  hello-cmake.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="1.9  hello-cmake.html">
+            
+                <a href="1.9  hello-cmake.html">
+            
+                    
+                    1.9  hello-cmake.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    2  子目录中使用多个CMake文件
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >1.5  设置构建类型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="robomaster&#x89C6;&#x89C9;&#x7B14;&#x8BB0;cmake&#xFF08;&#x4E94;&#xFF09;build-type">RoboMaster&#x89C6;&#x89C9;&#x7B14;&#x8BB0;CMake&#xFF08;&#x4E94;&#xFF09;build-type</h1>
+<p>&#x672C;CMake&#x7CFB;&#x5217;&#x662F;&#x4F9D;&#x636E;github&#x4E0A;&#x7684;cmake-examples&#x8FDB;&#x884C;&#x7FFB;&#x8BD1;&#x603B;&#x7ED3;&#x3002;&#x540C;&#x65F6;&#x5BF9;&#x4E8E;&#x4E0D;&#x61C2;&#x7684;&#x5730;&#x65B9;&#x8FDB;&#x884C;&#x603B;&#x7ED3;&#x4E0E;&#x6807;&#x6CE8;&#x3002;&#x5E0C;&#x671B;&#x672C;&#x7CFB;&#x5217;&#x80FD;&#x8282;&#x7701;&#x4F60;&#x5B66;&#x4E60;CMake&#x7684;&#x65F6;&#x95F4;&#x3002;</p>
+<p>&#x5B66;&#x4E60;&#x65B9;&#x5F0F;&#x662F;&#x5728;&#x5B9E;&#x8DF5;&#x4E2D;&#x5229;&#x7528;github&#x4E0A;&#x7684;example&#x5B66;&#x4E60;&#xFF0C;&#x540C;&#x65F6;&#x5BF9;&#x4E8E;&#x4E0D;&#x61C2;&#x7684;&#x5730;&#x65B9;&#x4E3B;&#x8981;&#x901A;&#x8FC7;&#x7FFB;&#x8BD1;&#x5B98;&#x65B9;&#x624B;&#x518C;&#x5B66;&#x4E60;&#xFF0C;&#x5176;&#x6B21;&#x662F;&#x67E5;&#x627E;&#x535A;&#x5BA2;&#x4E0A;&#x7684;&#x79C1;&#x4EBA;&#x7406;&#x89E3;&#x3002;</p>
+<p><a href="https://github.com/ttroy50/cmake-examples" target="_blank">&#x82F1;&#x6587;github&#x5730;&#x5740;</a>&#xFF1A;<a href="https://github.com/ttroy50/cmake-examples" target="_blank">https://github.com/ttroy50/cmake-examples</a></p>
+<p>CMake&#x82F1;&#x6587;&#x5B98;&#x65B9;&#x6559;&#x7A0B;&#xFF1A; <a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html" target="_blank">https://cmake.org/cmake/help/latest/guide/tutorial/index.html</a> </p>
+<p>[TOC]</p>
+<h2 id="&#x4E00;--&#x6587;&#x4EF6;&#x6811;">&#x4E00;  &#x6587;&#x4EF6;&#x6811;</h2>
+<pre><code class="lang-tree">&#x251C;&#x2500;&#x2500; CMakeLists.txt
+&#x251C;&#x2500;&#x2500; main.cpp
+</code></pre>
+<h3 id="11--maincpp">1.1  main.cpp</h3>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])</span>
+</span>{
+   <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Hello Build Type!&quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+   <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h3 id="12--cmakeliststxt">1.2  CMakeLists.txt</h3>
+<pre><code class="lang-cmake">
+<span class="hljs-keyword">cmake_minimum_required</span>(VERSION <span class="hljs-number">3.5</span>)
+<span class="hljs-comment">#&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x5219;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x7F16;&#x8BD1;&#x65B9;&#x5F0F;</span>
+<span class="hljs-keyword">if</span>(NOT CMAKE_BUILD_TYPE <span class="hljs-keyword">AND</span> NOT CMAKE_CONFIGURATION_TYPES)
+  <span class="hljs-comment">#&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x8F93;&#x51FA;message&#x91CC;&#x7684;&#x4FE1;&#x606F;</span>
+  <span class="hljs-keyword">message</span>(<span class="hljs-string">&quot;Setting build type to &apos;RelWithDebInfo&apos; as none was specified.&quot;</span>)
+  <span class="hljs-comment">#&#x4E0D;&#x7BA1;CACHE&#x91CC;&#x6709;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x8FC7;CMAKE_BUILD_TYPE&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x90FD;&#x5F3A;&#x5236;&#x8D4B;&#x503C;&#x8FD9;&#x4E2A;&#x503C;&#x4E3A;RelWithDebInfo</span>
+  <span class="hljs-keyword">set</span>(CMAKE_BUILD_TYPE RelWithDebInfo CACHE <span class="hljs-keyword">STRING</span> <span class="hljs-string">&quot;Choose the type of build.&quot;</span> FORCE)
+
+  <span class="hljs-comment"># &#x5F53;&#x4F7F;&#x7528;cmake-gui&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8BBE;&#x7F6E;&#x6784;&#x5EFA;&#x7EA7;&#x522B;&#x7684;&#x56DB;&#x4E2A;&#x53EF;&#x9009;&#x9879;</span>
+  <span class="hljs-keyword">set_property</span>(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS <span class="hljs-string">&quot;Debug&quot;</span> <span class="hljs-string">&quot;Release&quot;</span>
+    <span class="hljs-string">&quot;MinSizeRel&quot;</span> <span class="hljs-string">&quot;RelWithDebInfo&quot;</span>)
+<span class="hljs-keyword">endif</span>()
+
+
+<span class="hljs-keyword">project</span> (build_type)
+<span class="hljs-keyword">add_executable</span>(cmake_examples_build_type main.cpp)
+
+<span class="hljs-comment">#&#x547D;&#x4EE4;&#x7684;&#x5177;&#x4F53;&#x89E3;&#x91CA;&#x5728;&#x4E8C;  CMake&#x89E3;&#x6790;&#x4E2D;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x6CE8;&#x91CA;&#x53EA;&#x8BF4;&#x660E;&#x6CE8;&#x91CA;&#x540E;&#x6BCF;&#x4E00;&#x53E5;&#x7684;&#x4F5C;&#x7528;</span>
+</code></pre>
+<h2 id="&#x4E8C;--cmake&#x89E3;&#x6790;">&#x4E8C;  CMake&#x89E3;&#x6790;</h2>
+<h3 id="21--&#x6784;&#x5EFA;&#x7EA7;&#x522B;">2.1  &#x6784;&#x5EFA;&#x7EA7;&#x522B;</h3>
+<p>CMake&#x5177;&#x6709;&#x8BB8;&#x591A;&#x5185;&#x7F6E;&#x7684;&#x6784;&#x5EFA;&#x914D;&#x7F6E;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x7F16;&#x8BD1;&#x5DE5;&#x7A0B;&#x3002; &#x8FD9;&#x4E9B;&#x914D;&#x7F6E;&#x6307;&#x5B9A;&#x4E86;&#x4EE3;&#x7801;&#x4F18;&#x5316;&#x7684;&#x7EA7;&#x522B;&#xFF0C;&#x4EE5;&#x53CA;&#x8C03;&#x8BD5;&#x4FE1;&#x606F;&#x662F;&#x5426;&#x5305;&#x542B;&#x5728;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x4E2D;&#x3002; </p>
+<p>&#x8FD9;&#x4E9B;&#x4F18;&#x5316;&#x7EA7;&#x522B;&#xFF0C;&#x4E3B;&#x8981;&#x6709;&#xFF1A;</p>
+<ul>
+<li><p>Release &#x2014;&#x2014; &#x4E0D;&#x53EF;&#x4EE5;&#x6253;&#x65AD;&#x70B9;&#x8C03;&#x8BD5;&#xFF0C;&#x7A0B;&#x5E8F;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x540E;&#x53D1;&#x884C;&#x4F7F;&#x7528;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x5360;&#x7684;&#x4F53;&#x79EF;&#x5C0F;&#x3002; &#x5B83;&#x5BF9;&#x4EE3;&#x7801;&#x505A;&#x4E86;&#x4F18;&#x5316;&#xFF0C;&#x56E0;&#x6B64;&#x901F;&#x5EA6;&#x4F1A;&#x975E;&#x5E38;&#x5FEB;&#xFF0C; </p>
+<p>  &#x5728;&#x7F16;&#x8BD1;&#x5668;&#x4E2D;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#xFF1A; <code>-O3 -DNDEBUG</code> &#x53EF;&#x9009;&#x62E9;&#x6B64;&#x7248;&#x672C;&#x3002;</p>
+</li>
+<li><p>Debug &#x2014;&#x2014;&#x8C03;&#x8BD5;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x4F53;&#x79EF;&#x5927;&#x3002;</p>
+<p>  &#x5728;&#x7F16;&#x8BD1;&#x5668;&#x4E2D;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#xFF1A; <code>-g</code> &#x53EF;&#x9009;&#x62E9;&#x6B64;&#x7248;&#x672C;&#x3002;</p>
+</li>
+<li><p>MinSizeRel&#x2014;&#x2014; &#x6700;&#x5C0F;&#x4F53;&#x79EF;&#x7248;&#x672C;</p>
+<p>  &#x5728;&#x7F16;&#x8BD1;&#x5668;&#x4E2D;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#xFF1A;<code>-Os -DNDEBUG</code>&#x53EF;&#x9009;&#x62E9;&#x6B64;&#x7248;&#x672C;&#x3002;</p>
+</li>
+<li><p>RelWithDebInfo&#x2014;&#x2014; &#x65E2;&#x4F18;&#x5316;&#x53C8;&#x80FD;&#x8C03;&#x8BD5;&#x3002;</p>
+<p>  &#x5728;&#x7F16;&#x8BD1;&#x5668;&#x4E2D;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#xFF1A;<code>-O2 -g -DNDEBUG</code>&#x53EF;&#x9009;&#x62E9;&#x6B64;&#x7248;&#x672C;&#x3002;</p>
+</li>
+</ul>
+<h3 id="22-&#x8BBE;&#x7F6E;&#x7EA7;&#x522B;&#x7684;&#x65B9;&#x5F0F;">2.2 &#x8BBE;&#x7F6E;&#x7EA7;&#x522B;&#x7684;&#x65B9;&#x5F0F;</h3>
+<h4 id="221--cmake&#x56FE;&#x5F62;&#x754C;&#x9762;">2.2.1  CMake&#x56FE;&#x5F62;&#x754C;&#x9762;</h4>
+<p><img src="https://github.com/SFUMECJF/figureBed/blob/main/img/cmake-gui-build-type.png" alt="cmake-gui-build-type"></p>
+<h4 id="222--cmake&#x547D;&#x4EE4;&#x884C;&#x4E2D;">2.2.2  CMake&#x547D;&#x4EE4;&#x884C;&#x4E2D;</h4>
+<p>&#x5728;&#x547D;&#x4EE4;&#x884C;&#x8FD0;&#x884C;CMake&#x7684;&#x65F6;&#x5019;&#xFF0C; &#x4F7F;&#x7528;cmake&#x547D;&#x4EE4;&#x884C;&#x7684;-D&#x9009;&#x9879;&#x914D;&#x7F6E;&#x7F16;&#x8BD1;&#x7C7B;&#x578B; </p>
+<pre><code class="lang-cmake">cmake .. -DCMAKE_BUILD_TYPE=Release
+</code></pre>
+<h4 id="223--cmake&#x4E2D;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x7684;&#x6784;&#x5EFA;&#x7EA7;&#x522B;">2.2.3  CMake&#x4E2D;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x7684;&#x6784;&#x5EFA;&#x7EA7;&#x522B;</h4>
+<p> CMake&#x63D0;&#x4F9B;&#x7684;&#x9ED8;&#x8BA4;&#x6784;&#x5EFA;&#x7C7B;&#x578B;&#x662F;&#x4E0D;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x7684;&#x6784;&#x5EFA;&#x7EA7;&#x522B;&#x3002; &#x5BF9;&#x4E8E;&#x67D0;&#x4E9B;&#x9879;&#x76EE;&#xFF0C;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x7684;&#x6784;&#x5EFA;&#x7C7B;&#x578B;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E0D;&#x5FC5;&#x8BB0;&#x4F4F;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#x3002; </p>
+<p>&#x5177;&#x4F53;&#x8BED;&#x6CD5;&#x63A5;&#x4E0B;&#x6765;&#x4ECB;&#x7ECD;</p>
+<h4 id="224--set&#x547D;&#x4EE4;">2.2.4  set()&#x547D;&#x4EE4;</h4>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x4E3A;&#x666E;&#x901A;&#x53D8;&#x91CF;&#x3001;&#x7F13;&#x5B58;&#x53D8;&#x91CF;&#x3001;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x8D4B;&#x503C;&#x3002;</p>
+<p> <value>&#x5904;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x96F6;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#x3002;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#x5C06;&#x4EE5;<a href="https://cmake.org/cmake/help/latest/manual/cmake-language.7.html#cmake-language-lists" target="_blank">&#x5206;&#x53F7;&#x5206;&#x9694;&#x7684;&#x5217;&#x8868;</a>&#x5F62;&#x5F0F;&#x52A0;&#x5165;&#xFF0C;&#x4EE5;&#x5F62;&#x6210;&#x8981;&#x8BBE;&#x7F6E;&#x7684;&#x5B9E;&#x9645;&#x53D8;&#x91CF;&#x503C;&#x3002;&#x96F6;&#x53C2;&#x6570;&#x5C06;&#x5BFC;&#x81F4;&#x672A;&#x8BBE;&#x7F6E;&#x666E;&#x901A;&#x53D8;&#x91CF;&#x3002;&#x89C1;<a href="https://cmake.org/cmake/help/latest/command/unset.html#command:unset" target="_blank"><code>unset()</code></a> &#x547D;&#x4EE4;&#x663E;&#x5F0F;&#x53D6;&#x6D88;&#x8BBE;&#x7F6E;&#x53D8;&#x91CF;&#x3002; </value></p>
+<p>&#x6240;&#x4EE5;&#x6B64;&#x5904;&#x5B66;&#x4E60;SET&#x547D;&#x4EE4;&#x9700;&#x8981;&#x5206;&#x4E3A;&#x8BBE;&#x7F6E;&#x666E;&#x901A;&#x53D8;&#x91CF;&#xFF0C;&#x7F13;&#x5B58;&#x53D8;&#x91CF;&#x4EE5;&#x53CA;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E09;&#x79CD;&#x7C7B;&#x522B;&#x6765;&#x5B66;&#x4E60;&#x3002;</p>
+<h5 id="&#x6B63;&#x5E38;&#x53D8;&#x91CF;">&#x6B63;&#x5E38;&#x53D8;&#x91CF;</h5>
+<pre><code class="lang-cmake"><span class="hljs-keyword">set</span>(&lt;variable&gt; &lt;value&gt;... [PARENT_SCOPE])
+</code></pre>
+<p>&#x8BBE;&#x7F6E;&#x7684;&#x53D8;&#x91CF;&#x503C; &#x4F5C;&#x7528;&#x57DF;&#x5C5E;&#x4E8E;&#x6574;&#x4E2A; CMakeLists.txt &#x6587;&#x4EF6;&#x3002;(&#x4E00;&#x4E2A;&#x5DE5;&#x7A0B;&#x53EF;&#x80FD;&#x6709;&#x591A;&#x4E2A;CMakeLists.txt)</p>
+<p>&#x5F53;&#x8FD9;&#x4E2A;&#x8BED;&#x53E5;&#x4E2D;&#x52A0;&#x5165;PARENT_SCOPE&#x540E;&#xFF0C;&#x8868;&#x793A;&#x8981;&#x8BBE;&#x7F6E;&#x7684;&#x53D8;&#x91CF;&#x662F;&#x7236;&#x76EE;&#x5F55;&#x4E2D;&#x7684;CMakeLists.txt&#x8BBE;&#x7F6E;&#x7684;&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#x6709;&#x5982;&#x4E0B;&#x76EE;&#x5F55;&#x6811;&#xFF1A;</p>
+<pre><code class="lang-cmake">&#x251C;&#x2500;&#x2500; CMakeLists.txt
+&#x2514;&#x2500;&#x2500; src
+    &#x2514;&#x2500;&#x2500; CMakeLists.txt
+</code></pre>
+<p>&#x5E76;&#x4E14;&#x5728; &#x9876;&#x5C42;&#x7684;CMakeLists.txt&#x4E2D;&#x5305;&#x542B;&#x4E86;src&#x76EE;&#x5F55;&#xFF1A;<code>add_subdirectory(src)</code></p>
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x9876;&#x5C42;&#x7684;CMakeLists.txt&#x5C31;&#x662F;&#x7236;&#x76EE;&#x5F55;&#xFF0C;</p>
+<p>&#x5982;&#x679C;&#x7236;&#x76EE;&#x5F55;&#x4E2D;&#x6709;&#x53D8;&#x91CF;<code>Bang</code>,&#x5728;&#x5B50;&#x76EE;&#x5F55;&#x4E2D;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#xFF08;&#x6BD4;&#x5982;&#x7528;message&#x8F93;&#x51FA;<code>Bang</code>&#xFF0C;&#x503C;&#x662F;&#x7236;&#x76EE;&#x5F55;&#x4E2D;&#x8BBE;&#x7F6E;&#x7684;&#x503C;&#xFF09;&#x5E76;&#x4E14;&#x5229;&#x7528;set()&#x4FEE;&#x6539;&#x8BE5;&#x53D8;&#x91CF;<code>Bang</code>&#x7684;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x5E0C;&#x671B;&#x5728;&#x51FA;&#x53BB;&#x8BE5;&#x5B50;CMakeLists.txt&#x5BF9;&#x8BE5;&#x53D8;&#x91CF;&#x505A;&#x51FA;&#x7684;&#x4FEE;&#x6539;&#x80FD;&#x591F;&#x5F97;&#x5230;&#x4FDD;&#x7559;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x9700;&#x8981;&#x5728;set()&#x547D;&#x4EE4;&#x4E2D;&#x52A0;&#x5165;Parent scope&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x5982;&#x679C;&#x7236;&#x76EE;&#x5F55;&#x4E2D;&#x672C;&#x8EAB;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x5B50;&#x76EE;&#x5F55;&#x4E2D;&#x4ECD;&#x7136;&#x4F7F;&#x7528;&#x4E86;parent scope&#xFF0C;&#x90A3;&#x4E48;&#x51FA;&#x4E86;&#x8FD9;&#x4E2A;&#x4F5C;&#x7528;&#x57DF;&#x540E;&#xFF0C;&#x8BE5;&#x53D8;&#x91CF;&#x4ECD;&#x7136;&#x4E0D;&#x4F1A;&#x5B58;&#x5728;&#x3002;</p>
+<h5 id="cache&#x53D8;&#x91CF;">CACHE&#x53D8;&#x91CF;</h5>
+<p>&#x5B8C;&#x6574;&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cmake"><span class="hljs-keyword">set</span>(&lt;variable&gt; &lt;value&gt;... CACHE &lt;type&gt; &lt;docstring&gt; [FORCE])
+</code></pre>
+<ul>
+<li><p>&#x9996;&#x5148;&#x4EC0;&#x4E48;&#x662F;CACHE&#x53D8;&#x91CF;&#xFF0C;&#x5C31;&#x662F;&#x5728;&#x8FD0;&#x884C;cmake&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x53EF;&#x80FD;&#x4F1A;&#x88AB;&#x7F13;&#x5B58;&#x5230;&#x4E00;&#x4EFD;&#x6587;&#x4EF6;&#x91CC;&#x5373;build&#x547D;&#x4EE4;&#x4E0B;&#x7684;CMakeCache.txt&#xFF0C;&#x5F53;&#x4F60;&#x91CD;&#x65B0;&#x8FD0;&#x884C;cmake&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x90A3;&#x4E9B;&#x53D8;&#x91CF;&#x4F1A;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x7F13;&#x5B58;&#x91CC;&#x7684;&#x503C;&#x3002;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x662F;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x6574;&#x4E2A;CMake&#x5DE5;&#x7A0B;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8BE5;&#x53D8;&#x91CF;&#x3002;</p>
+</li>
+<li><p>&#x5728;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x91CC;&#xFF0C;&#x53EA;&#x8981;&#x8FD0;&#x884C;cmake ..&#x547D;&#x4EE4;&#xFF0C;&#x81EA;&#x52A8;&#x4F1A;&#x51FA;&#x73B0;&#x4E00;&#x4E9B;&#x503C;&#xFF0C;&#x6BD4;&#x5982; CMAKE_INSTALL_PREFIX &#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E; set(CMAKE_INSTALL_PREFIX &quot;/usr&quot;) &#xFF0C;&#x867D;&#x7136;CACHE&#x7F13;&#x5B58;&#x6587;&#x4EF6;&#x91CC;&#x8FD8;&#x6709;&#x8FD9;&#x4E2A;CMAKE_INSTALL_PREFIX &#x53D8;&#x91CF;&#xFF0C;&#x4F46;&#x662F;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x663E;&#x793A;&#x5F97;&#x8BBE;&#x7F6E;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;CMAKE_INSTALL_PREFIX &#x7684;&#x6B63;&#x5E38;&#x53D8;&#x91CF;&#xFF0C;&#x6240;&#x4EE5;&#x4E4B;&#x540E;&#x4F7F;&#x7528;CMAKE_INSTALL_PREFIX &#xFF0C;&#x503C;&#x662F;&#x6211;&#x4EEC;&#x8BBE;&#x7F6E;&#x7684;&#x6B63;&#x5E38;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x3002;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x52A0;&#x4E0A;CACHE&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x5219;&#x8BBE;&#x7F6E;&#x7684;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x4F1A;&#x88AB;&#x5199;&#x5165;&#x7F13;&#x5B58;&#x6587;&#x4EF6;&#x4E2D;&#xFF08;&#x4F46;&#x5982;&#x679C;&#x672C;&#x8EAB;&#x7F13;&#x5B58;&#x6587;&#x4EF6;&#x4E2D;&#x6709;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x5219;&#x4E0D;&#x4F1A;&#x8986;&#x76D6;&#x7F13;&#x5B58;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#xFF09;&#x3002;&#x53EA;&#x6709;&#x52A0;&#x4E0A;FORCE&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x8FD9;&#x4E2A;&#x88AB;&#x5199;&#x5165;&#x6587;&#x4EF6;&#x7684;&#x503C;&#x4F1A;&#x8986;&#x76D6;&#x4E4B;&#x524D;&#x6587;&#x4EF6;&#x4E2D;&#x5B58;&#x5728;&#x7684;&#x540C;&#x540D;&#x53D8;&#x91CF;&#x3002;</p>
+</li>
+<li>&#x52A0;&#x4E0A;CACHE&#x5173;&#x952E;&#x5B57;&#xFF0C;<type>&#x548C;<docstring>&#x662F;&#x5FC5;&#x9700;&#x7684;&#x3002; </docstring></type></li>
+</ul>
+<p><type>&#x88AB; CMake GUI &#x7528;&#x6765;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#xFF0C;&#x8BA9;&#x7528;&#x6237;&#x8BBE;&#x7F6E;&#x503C;&#x3002;<type>&#x53EF;&#x4EE5;&#x6709;5&#x79CD;&#x9009;&#x9879;&#x3002;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x662F;STRING  &#xFF0C;&#x5F39;&#x51FA;&#x63D0;&#x793A;&#x6D88;&#x606F;</type></type></p>
+<ul>
+<li><p><type>&#x4E3A;BOOL&#xFF0C;&#x5219;<docstring>&#x4E3A;&#x5E03;&#x5C14;<code>ON/OFF</code>&#x503C;&#x3002; <a href="https://cmake.org/cmake/help/latest/manual/cmake-gui.1.html#manual:cmake-gui(1" target="_blank"><code>cmake-gui(1)</code></a>) &#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x590D;&#x9009;&#x6846;&#x3002;</docstring></type></p>
+</li>
+<li><p><type>&#x4E3A;FILEPATH&#xFF0C;&#x5219;<docstring>&#x4E3A;&#x78C1;&#x76D8;&#x4E0A;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x3002; <a href="https://cmake.org/cmake/help/latest/manual/cmake-gui.1.html#manual:cmake-gui(1" target="_blank"><code>cmake-gui(1)</code></a>) &#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5BF9;&#x8BDD;&#x6846;&#x3002;</docstring></type></p>
+</li>
+<li><p><type>&#x4E3A; PATH &#xFF0C;&#x5219;<docstring>&#x4E3A;&#x78C1;&#x76D8;&#x4E0A;&#x76EE;&#x5F55;&#x7684;&#x8DEF;&#x5F84;&#x3002; <a href="https://cmake.org/cmake/help/latest/manual/cmake-gui.1.html#manual:cmake-gui(1" target="_blank"><code>cmake-gui(1)</code></a>) &#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5BF9;&#x8BDD;&#x6846;&#x3002;</docstring></type></p>
+</li>
+<li><p><type>&#x4E3A; STRING &#xFF0C;&#x5219;<docstring>&#x4E3A;&#x4E00;&#x884C;&#x6587;&#x5B57;&#x3002; <a href="https://cmake.org/cmake/help/latest/manual/cmake-gui.1.html#manual:cmake-gui(1" target="_blank"><code>cmake-gui(1)</code></a>) &#x63D0;&#x4F9B;&#x6587;&#x672C;&#x5B57;&#x6BB5;&#x6216;&#x4E0B;&#x62C9;&#x9009;&#x62E9;&#xFF08;&#x5982;&#x679C; <a href="https://cmake.org/cmake/help/latest/prop_cache/STRINGS.html#prop_cache:STRINGS" target="_blank"><code>STRINGS</code></a> &#x8BBE;&#x7F6E;&#x4E86;&#x7F13;&#x5B58;&#x6761;&#x76EE;&#x5C5E;&#x6027;&#x3002;&#xFF09;</docstring></type></p>
+</li>
+<li><p><type>&#x4E3A; INTERNAL &#xFF0C;&#x5219;<docstring>&#x4E3A;&#x4E00;&#x884C;&#x6587;&#x5B57;&#x3002; <a href="https://cmake.org/cmake/help/latest/manual/cmake-gui.1.html#manual:cmake-gui(1" target="_blank"><code>cmake-gui(1)</code></a>)&#x4E0D;&#x663E;&#x793A;&#x5185;&#x90E8;&#x6761;&#x76EE;&#x3002;&#x5B83;&#x4EEC;&#x53EF;&#x7528;&#x4E8E;&#x5728;&#x8FD0;&#x884C;&#x4E4B;&#x95F4;&#x6301;&#x4E45;&#x5B58;&#x50A8;&#x53D8;&#x91CF;&#x3002;&#x4F7F;&#x7528;&#x6B64;&#x7C7B;&#x578B;&#x6697;&#x542B;<code>FORCE</code>&#x3002;</docstring></type></p>
+</li>
+</ul>
+<p>&#x6BD4;&#x5982;</p>
+<pre><code class="lang-cmake"><span class="hljs-keyword">set</span>(CMAKE_BUILD_TYPE RelWithDebInfo CACHE <span class="hljs-keyword">STRING</span> <span class="hljs-string">&quot;Choose the type of build.&quot;</span> FORCE)
+</code></pre>
+<p>&#x8FD9;&#x53E5;&#x8BDD;&#xFF0C;&#x5C31;&#x662F;&#x5F3A;&#x5236;&#x5728;&#x7F13;&#x5B58;&#x6587;&#x4EF6;&#x4E2D;&#x8986;&#x76D6;CMAKE_BUILD_TYPE&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x5C06;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x8BBE;&#x7F6E;&#x4E3A;RelWithDebInfo&#x3002;&#x800C;<code>STRING &quot;Choose the type of build.&quot;</code>&#x53C2;&#x6570;&#x5728;&#x4F7F;&#x7528;cmake-gui&#x7684;&#x65F6;&#x5019;&#x8D77;&#x4F5C;&#x7528;&#xFF0C;&#x5728;&#x754C;&#x9762;&#x4E0A;&#x4F1A;&#x51FA;&#x73B0;&#x4E00;&#x4E2A;&#x4E0B;&#x62C9;&#x6846;&#x4F9B;&#x7ED9;&#x7528;&#x6237;&#x9009;&#x62E9;&#x6765;&#x8BBE;&#x7F6E;CMAKE_BUILD_TYPE&#x53D8;&#x91CF;&#x3002;<docstring>&#x91CC;&#x7684;&#x4E00;&#x884C;&#x6587;&#x5B57;&#x4F5C;&#x4E3A;&#x63D0;&#x793A;&#x3002;</docstring></p>
+<p>&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x4E0B;&#x62C9;&#x6846;&#x91CC;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x968F;&#x540E;&#x7684;<code>set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS &quot;Debug&quot; &quot;Release&quot; &quot;MinSizeRel&quot; &quot;RelWithDebInfo&quot;)</code>&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x6765;&#x8BBE;&#x7F6E;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x6240;&#x8C13;&#x7684;&#x8BBE;&#x7F6E;string&#x7F13;&#x5B58;&#x6761;&#x76EE;&#x5C5E;&#x6027;&#x3002;</p>
+<p>&#x754C;&#x9762;&#x663E;&#x793A;&#x5982;&#x672C;&#x8282;2.2.1</p>
+<p>&#x5B98;&#x65B9;&#x6587;&#x6863;&#xFF1A; <a href="https://cmake.org/cmake/help/latest/command/set.html" target="_blank">https://cmake.org/cmake/help/latest/command/set.html</a> </p>
+<p>&#x53C2;&#x8003;&#x535A;&#x5BA2;&#xFF1A; <a href="https://blog.csdn.net/Zhanganliu/article/details/99851352" target="_blank">https://blog.csdn.net/Zhanganliu/article/details/99851352</a> </p>
+<p>&#x200B;                     <a href="https://www.cnblogs.com/ncuneugcj/p/9756324.html" target="_blank">https://www.cnblogs.com/ncuneugcj/p/9756324.html</a> </p>
+<h5 id="&#x73AF;&#x5883;&#x53D8;&#x91CF;">&#x73AF;&#x5883;&#x53D8;&#x91CF;</h5>
+<pre><code class="lang-cmake"><span class="hljs-keyword">set</span>(ENV{&lt;variable&gt;} [&lt;value&gt;])
+</code></pre>
+<p>&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A; <a href="https://cmake.org/cmake/help/latest/manual/cmake-env-variables.7.html#manual:cmake-env-variables(7" target="_blank"><code>Environment Variable</code></a>) &#x5230;&#x7ED9;&#x5B9A;&#x503C;&#x3002;&#x968F;&#x540E;&#x7684;&#x8C03;&#x7528;<code>$ENV{&lt;varible&gt;}</code>&#x5C06;&#x8FD4;&#x56DE;&#x6B64;&#x65B0;&#x503C;&#x3002;</p>
+<p>&#x6B64;&#x547D;&#x4EE4;&#x4EC5;&#x5F71;&#x54CD;&#x5F53;&#x524D;&#x7684;CMake&#x8FDB;&#x7A0B;&#xFF0C;&#x4E0D;&#x5F71;&#x54CD;&#x8C03;&#x7528;CMake&#x7684;&#x8FDB;&#x7A0B;&#xFF0C;&#x4E5F;&#x4E0D;&#x5F71;&#x54CD;&#x6574;&#x4E2A;&#x7CFB;&#x7EDF;&#x73AF;&#x5883;&#xFF0C;&#x4E5F;&#x4E0D;&#x5F71;&#x54CD;&#x540E;&#x7EED;&#x6784;&#x5EFA;&#x6216;&#x6D4B;&#x8BD5;&#x8FC7;&#x7A0B;&#x7684;&#x73AF;&#x5883;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5728;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x4E4B;&#x540E;<code>ENV{}</code>&#x6216;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x53C2;&#x6570;``&#xFF0C;&#x5219;&#x6B64;&#x547D;&#x4EE4;&#x5C06;&#x6E05;&#x9664;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x7684;&#x4EFB;&#x4F55;&#x73B0;&#x6709;&#x503C;&#x3002;</p>
+<p>&#x4E4B;&#x540E;``&#x7684;&#x53C2;&#x6570;&#x5C06;&#x88AB;&#x5FFD;&#x7565;&#x3002;&#x5982;&#x679C;&#x53D1;&#x73B0;&#x5176;&#x4ED6;&#x53C2;&#x6570;&#xFF0C;&#x5219;&#x4F1A;&#x53D1;&#x51FA;&#x4F5C;&#x8005;&#x8B66;&#x544A;&#x3002;</p>
+<h2 id="&#x4E09;--&#x6784;&#x5EFA;&#x793A;&#x4F8B;">&#x4E09;  &#x6784;&#x5EFA;&#x793A;&#x4F8B;</h2>
+<pre><code class="lang-bash">$ mkdir build
+
+$ <span class="hljs-built_in">cd</span> build/
+
+$ cmake ..
+Setting build <span class="hljs-built_in">type</span> to <span class="hljs-string">&apos;RelWithDebInfo&apos;</span> as none was specified.
+-- The C compiler identification is GNU 4.8.4
+-- The CXX compiler identification is GNU 4.8.4
+-- Check <span class="hljs-keyword">for</span> working C compiler: /usr/bin/cc
+-- Check <span class="hljs-keyword">for</span> working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - <span class="hljs-keyword">done</span>
+-- Check <span class="hljs-keyword">for</span> working CXX compiler: /usr/bin/c++
+-- Check <span class="hljs-keyword">for</span> working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - <span class="hljs-keyword">done</span>
+-- Configuring <span class="hljs-keyword">done</span>
+-- Generating <span class="hljs-keyword">done</span>
+-- Build files have been written to: /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build
+
+$ make VERBOSE=1
+/usr/bin/cmake -H/home/matrim/workspace/cmake-examples/01-basic/F-build-type -B/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles/progress.marks
+make <span class="hljs-_">-f</span> CMakeFiles/Makefile2 all
+make[1]: Entering directory `/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build<span class="hljs-string">&apos;
+make -f CMakeFiles/cmake_examples_build_type.dir/build.make CMakeFiles/cmake_examples_build_type.dir/depend
+make[2]: Entering directory `/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build&apos;</span>
+<span class="hljs-built_in">cd</span> /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build &amp;&amp; /usr/bin/cmake -E cmake_depends <span class="hljs-string">&quot;Unix Makefiles&quot;</span> /home/matrim/workspace/cmake-examples/01-basic/F-build-type /home/matrim/workspace/cmake-examples/01-basic/F-build-type /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles/cmake_examples_build_type.dir/DependInfo.cmake --color=
+Dependee <span class="hljs-string">&quot;/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles/cmake_examples_build_type.dir/DependInfo.cmake&quot;</span> is newer than depender <span class="hljs-string">&quot;/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles/cmake_examples_build_type.dir/depend.internal&quot;</span>.
+Dependee <span class="hljs-string">&quot;/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles/CMakeDirectoryInformation.cmake&quot;</span> is newer than depender <span class="hljs-string">&quot;/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles/cmake_examples_build_type.dir/depend.internal&quot;</span>.
+Scanning dependencies of target cmake_examples_build_<span class="hljs-built_in">type</span>
+make[2]: Leaving directory `/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build<span class="hljs-string">&apos;
+make -f CMakeFiles/cmake_examples_build_type.dir/build.make CMakeFiles/cmake_examples_build_type.dir/build
+make[2]: Entering directory `/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build&apos;</span>
+/usr/bin/cmake -E cmake_progress_report /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles 1
+[100%] Building CXX object CMakeFiles/cmake_examples_build_type.dir/main.cpp.o
+/usr/bin/c++    -O2 -g -DNDEBUG   -o CMakeFiles/cmake_examples_build_type.dir/main.cpp.o -c /home/matrim/workspace/cmake-examples/01-basic/F-build-type/main.cpp
+Linking CXX executable cmake_examples_build_<span class="hljs-built_in">type</span>
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmake_examples_build_type.dir/link.txt --verbose=1
+/usr/bin/c++   -O2 -g -DNDEBUG    CMakeFiles/cmake_examples_build_type.dir/main.cpp.o  -o cmake_examples_build_<span class="hljs-built_in">type</span> -rdynamic
+make[2]: Leaving directory `/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build<span class="hljs-string">&apos;
+/usr/bin/cmake -E cmake_progress_report /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles  1
+[100%] Built target cmake_examples_build_type
+make[1]: Leaving directory `/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build&apos;</span>
+/usr/bin/cmake -E cmake_progress_start /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles 0$ mkdir build
+$ <span class="hljs-built_in">cd</span> build/
+/build$ cmake ..
+Setting build <span class="hljs-built_in">type</span> to <span class="hljs-string">&apos;RelWithDebInfo&apos;</span> as none was specified.
+-- The C compiler identification is GNU 4.8.4
+-- The CXX compiler identification is GNU 4.8.4
+-- Check <span class="hljs-keyword">for</span> working C compiler: /usr/bin/cc
+-- Check <span class="hljs-keyword">for</span> working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - <span class="hljs-keyword">done</span>
+-- Check <span class="hljs-keyword">for</span> working CXX compiler: /usr/bin/c++
+-- Check <span class="hljs-keyword">for</span> working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - <span class="hljs-keyword">done</span>
+-- Configuring <span class="hljs-keyword">done</span>
+-- Generating <span class="hljs-keyword">done</span>
+-- Build files have been written to: /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build
+/build$ make VERBOSE=1
+/usr/bin/cmake -H/home/matrim/workspace/cmake-examples/01-basic/F-build-type -B/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles/progress.marks
+make <span class="hljs-_">-f</span> CMakeFiles/Makefile2 all
+make[1]: Entering directory `/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build<span class="hljs-string">&apos;
+make -f CMakeFiles/cmake_examples_build_type.dir/build.make CMakeFiles/cmake_examples_build_type.dir/depend
+make[2]: Entering directory `/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build&apos;</span>
+<span class="hljs-built_in">cd</span> /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build &amp;&amp; /usr/bin/cmake -E cmake_depends <span class="hljs-string">&quot;Unix Makefiles&quot;</span> /home/matrim/workspace/cmake-examples/01-basic/F-build-type /home/matrim/workspace/cmake-examples/01-basic/F-build-type /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles/cmake_examples_build_type.dir/DependInfo.cmake --color=
+Dependee <span class="hljs-string">&quot;/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles/cmake_examples_build_type.dir/DependInfo.cmake&quot;</span> is newer than depender <span class="hljs-string">&quot;/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles/cmake_examples_build_type.dir/depend.internal&quot;</span>.
+Dependee <span class="hljs-string">&quot;/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles/CMakeDirectoryInformation.cmake&quot;</span> is newer than depender <span class="hljs-string">&quot;/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles/cmake_examples_build_type.dir/depend.internal&quot;</span>.
+Scanning dependencies of target cmake_examples_build_<span class="hljs-built_in">type</span>
+make[2]: Leaving directory `/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build<span class="hljs-string">&apos;
+make -f CMakeFiles/cmake_examples_build_type.dir/build.make CMakeFiles/cmake_examples_build_type.dir/build
+make[2]: Entering directory `/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build&apos;</span>
+/usr/bin/cmake -E cmake_progress_report /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles 1
+[100%] Building CXX object CMakeFiles/cmake_examples_build_type.dir/main.cpp.o
+/usr/bin/c++    -O2 -g -DNDEBUG   -o CMakeFiles/cmake_examples_build_type.dir/main.cpp.o -c /home/matrim/workspace/cmake-examples/01-basic/F-build-type/main.cpp
+Linking CXX executable cmake_examples_build_<span class="hljs-built_in">type</span>
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmake_examples_build_type.dir/link.txt --verbose=1
+/usr/bin/c++   -O2 -g -DNDEBUG    CMakeFiles/cmake_examples_build_type.dir/main.cpp.o  -o cmake_examples_build_<span class="hljs-built_in">type</span> -rdynamic
+make[2]: Leaving directory `/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build<span class="hljs-string">&apos;
+/usr/bin/cmake -E cmake_progress_report /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles  1
+[100%] Built target cmake_examples_build_type
+make[1]: Leaving directory `/home/matrim/workspace/cmake-examples/01-basic/F-build-type/build&apos;</span>
+/usr/bin/cmake -E cmake_progress_start /home/matrim/workspace/cmake-examples/01-basic/F-build-type/build/CMakeFiles 0
+</code></pre>
+<h2 id="&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;">&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;</h2>
+<p>&#x6B22;&#x8FCE;&#x5927;&#x5BB6;&#x5173;&#x6CE8;&#x6211;&#x7684;&#x4E2A;&#x4EBA;&#x516C;&#x4F17;&#x53F7;&#xFF0C;&#x73B0;&#x9636;&#x6BB5;&#x4E3B;&#x8981;&#x603B;&#x7ED3;Robomaster&#x76F8;&#x5173;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x77E5;&#x8BC6;&#xFF1A;Qt&#xFF0C;C++&#xFF0C;CMake,OpenCV&#x7B49;&#x7B49;
+&#x516C;&#x4F17;&#x53F7;&#x540D;&#x79F0;&#xFF1A;&#x4E09;&#x4E30;&#x6742;&#x8D27;&#x94FA;</p>
+<p><img src="https://img-blog.csdnimg.cn/20200529103009878.gif#pic_center" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.4  Shared Library.html" class="navigation navigation-prev " aria-label="Previous page: 1.4  包含动态库">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1.6  Compile Flags.html" class="navigation navigation-next " aria-label="Next page: 1.6  设置编译方式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.5  设置构建类型","level":"1.2.5","depth":2,"next":{"title":"1.6  设置编译方式","level":"1.2.6","depth":2,"path":"CMakemakedown/01/1.6  Compile Flags.md","ref":"CMakemakedown/01/1.6  Compile Flags.md","articles":[]},"previous":{"title":"1.4  包含动态库","level":"1.2.4","depth":2,"path":"CMakemakedown/01/1.4  Shared Library.md","ref":"CMakemakedown/01/1.4  Shared Library.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"CMakemakedown/01/1.5  build-type.md","mtime":"2020-11-08T10:57:16.637Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-08T12:05:30.195Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
