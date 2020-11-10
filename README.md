@@ -16,6 +16,17 @@
   </tr>
 </table>
 
+<p align="center">
+  <a href="https://github.com/vuejs/vue">
+    <img src="https://img.shields.io/badge/ubuntu-1604/1804/2004-brightgreen.svg" alt="ubuntu">
+  </a>
+  <a href="https://github.com/vuejs/vue-router">
+    <img src="https://img.shields.io/badge/Language-C++--shell-brightred.svg" alt="vue-router">
+  </a>
+  <a href="https://github.com/vuejs/vuex">
+    <img src="https://img.shields.io/badge/学习方式-在线阅读-brightgreen.svg" alt="vuex">
+  </a>
+</p>  
 # cmake-examples-Chinese
 在线阅读地址：[通过例子学习CMake](https://sfumecjf.github.io/cmake-examples-Chinese/)
 
