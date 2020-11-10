@@ -27,7 +27,7 @@
     <img src="https://img.shields.io/badge/学习方式-在线阅读-brightgreen.svg" alt="vuex">
   </a>
 </p>  
-[贡献者友链](https://bye-lemon.github.io/)
+[贡献者主页](https://bye-lemon.github.io/)
 
 
 # cmake-examples-Chinese
