@@ -4,7 +4,7 @@
 
 toc::[]
 
-# Introduction
+## Introduction
 
 This example shows how to setup a CMake project that includes sub-projects. The
 top level CMakeLists.txt calls the CMakeLists.txt in the sub directories to
@@ -60,7 +60,7 @@ This also means that if you install your library for other users the default ins
 +/usr/local/include/sublib1/sublib1.h+.这也意味着，如果您为其他用户安装库，则默认安装位置为/usr/local/include/sublib1/sublib1.h。
 ====
 
-# Concepts
+## Concepts
 
 ## Adding a Sub-Directory
 
@@ -185,7 +185,7 @@ and sublibrary2 libraries it will automatically include the `${sublibrary1_SOURC
 and `${sublibrary2_SOURCE_DIR}/inc` folders as they are exported with the
  +PUBLIC+ and +INTERFACE+ scopes of the libraries.创建库时，这由target_include_directories（）命令中的作用域控制。 在此示例中，因为子二进制可执行文件链接了sublibrary1和sublibrary2库，所以当它们与库的PUBLIC和INTERFACE范围一起导出时，它将自动包含$ {sublibrary1_SOURCE_DIR} / inc和$ {sublibrary2_SOURCE_DIR} / inc文件夹。
 
-# Building the example
+## Building the example
 
 [source,bash]
 ----
