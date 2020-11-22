@@ -1,10 +1,10 @@
-= Compiling with clang
+== Compiling with clang
 :toc:
 :toc-placement!:
 
 toc::[]
 
-# 介绍
+== 介绍
 使用CMake进行构建时，可以设置C和C ++编译器。 此示例与link:../A-hello-cmake[hello-cmake]示例相同，不同之处在于它显示了将编译器从默认的gcc更改为http://clang.llvm.org/[clang]的最基本方法。
 
 文件树如下:
@@ -19,9 +19,9 @@ $ tree
   * link:CMakeLists.txt[] - 包含了要运行的CMake命令
   * link:main.cpp[] - 一个简单的 "Hello World" cpp 文件.
 
-# 概念
+== 解析
 
-### 编译器选项
+=== 编译器选项
 
 CMake提供了控制程序编译以及链接的选项，选项如下:
 
@@ -40,7 +40,7 @@ CMake提供了控制程序编译以及链接的选项，选项如下:
 ====
 
 
-### 设置标志
+=== 设置标志
 
 就像 link:../F-build-type[Build Type] 描述的那样, 可以使用cmake gui或从命令行设置CMake的参数。
 
@@ -63,7 +63,7 @@ Linking CXX executable hello_cmake
 
 
 
-# 编译示例
+== 编译示例
 
 Below is sample output from building this example.
 
