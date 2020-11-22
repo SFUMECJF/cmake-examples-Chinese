@@ -1,17 +1,21 @@
-= Protobuf Code Generation
+= Protobuf Code Generation - 使用Protobuf的代码生成
 :toc:
 :toc-placement!:
 
 toc::[]
 
-# Introduction
+# Introduction - 简介
 
-This example shows how to generate source files using https://github.com/google/protobuf[protobuf].
-Protocol Buffers is a data serialization format from Google. A user provides a
-`.proto` file with a description of the data. Then using the protobuf compiler, the proto file
-can be translated into source code in a number of languages including C++.
+本示例展示如何使用 https://github.com/google/protobuf[protobuf] 生成源码文件。Protocol Buffers 是一种由谷歌提出的数据序列化的格式。用户可以提供一个描述了数据的 `.proto` 格式的文件，通过protobuf编译器，这一文件可以被编译成包括C++在内的一系列编程语言的源码文件。
 
-The files in this tutorial are below:
+ This example shows how to generate source files using https://github.com/google/protobuf[protobuf].
+ Protocol Buffers is a data serialization format from Google. A user provides a
+ `.proto` file with a description of the data. Then using the protobuf compiler, the proto file
+ can be translated into source code in a number of languages including C++.
+
+本教程的目录结构如下所示：
+
+ The files in this tutorial are below:
 
 ```
 $ tree
@@ -21,38 +25,52 @@ $ tree
 ├── main.cpp
 ```
 
-  * link:AddressBook.proto[] - proto file from main protocol buffer https://developers.google.com/protocol-buffers/docs/cpptutorial[example]
-  * link:CMakeLists.txt[] - Contains the CMake commands you wish to run
-  * link:main.cpp[] - The source file from the protobuf example.
+  * link:AddressBook.proto[] - 使用protocol buffer定义的proto文件 https://developers.google.com/protocol-buffers/docs/cpptutorial[example]
+    ** link:AddressBook.proto[] - proto file from main protocol buffer https://developers.google.com/protocol-buffers/docs/cpptutorial[example]
+  * link:CMakeLists.txt[] - 描述你希望能够运行的CMake命令
+    ** link:CMakeLists.txt[] - Contains the CMake commands you wish to run
+  * link:main.cpp[] - 包含主函数的源文件
+    ** link:main.cpp[] - The source file from the protobuf example.
 
-# Requirements
+# Requirements - 必要依赖
 
-This example requires the protocol buffers binary and libraries to be installed.
+本示例要求预安装protocol buffers的二进制文件和库文件，在Ubuntu系统中，可以使用下述命令安装：
 
-This can be installed on Ubuntu using
+ This example requires the protocol buffers binary and libraries to be installed.
+
+ This can be installed on Ubuntu using
 
 [source,bash]
 ----
 sudo apt-get install protobuf-compiler libprotobuf-dev
 ----
 
-# Concepts
+# Concepts - 概念
 
-## Exported Variables
+## Exported Variables - 导出变量
 
-The variables exported by the CMake protobuf package and used in this example include:
+在本示例中，通过CMake protobuf包到处并使用的变量如下：
 
-  * `PROTOBUF_FOUND` - If Protocol Buffers is installed
-  * `PROTOBUF_INCLUDE_DIRS` - The protobuf header files
-  * `PROTOBUF_LIBRARIES` - The protobuf library
+ The variables exported by the CMake protobuf package and used in this example include:
 
-More variables are defined and can be found by examining the documentation at the
-top of your `FindProtobuf.cmake` file.
+  * `PROTOBUF_FOUND` - 标志Protocol Buffers是否安装
+    ** `PROTOBUF_FOUND` - If Protocol Buffers is installed
+  * `PROTOBUF_INCLUDE_DIRS` - 描述protobuf头文件路径
+    ** `PROTOBUF_INCLUDE_DIRS` - The protobuf header files
+  * `PROTOBUF_LIBRARIES` - 描述protobuf库文件路径
+    ** `PROTOBUF_LIBRARIES` - The protobuf library
 
-## Generating Source
+关于Protobuf变量更详细的描述可以查阅 `FindProtobuf.cmake` 文件获取。
 
-The protobuf CMake package includes a number of helper functions to make the
-code generation easier. In this example we are generating C++ source and use
+ More variables are defined and can be found by examining the documentation at the
+ top of your `FindProtobuf.cmake` file.
+
+## Generating Source - 源文件生成
+
+CMake protobuf包中包含了一些列的帮助函数来简化源代码生成流程，在本示例中，我们是用下面的语句来生成C++源码：
+
+ The protobuf CMake package includes a number of helper functions to make the
+ code generation easier. In this example we are generating C++ source and use
 the following code:
 
 [source,cmake]
@@ -60,20 +78,29 @@ the following code:
 PROTOBUF_GENERATE_CPP(PROTO_SRCS PROTO_HDRS AddressBook.proto)
 ----
 
-The arguments are:
+这里的参数包括：
 
-  * PROTO_SRCS - Name of the variable that will store the .pb.cc files.
-  * PROTO_HDRS- Name of the variable that will store the .pb.h files.
-  * AddressBook.proto - The .proto file to generate code from.
+ The arguments are:
 
-## Generated Files
+  * PROTO_SRCS - 将被存储在.pb.cc文件里的变量名
+    ** PROTO_SRCS - Name of the variable that will store the .pb.cc files.
+  * PROTO_HDRS- 将被存储在.pb.h文件里的变量名
+    ** PROTO_HDRS- Name of the variable that will store the .pb.h files.
+  * AddressBook.proto - 用于编译的原始.proto文件
+    ** AddressBook.proto - The .proto file to generate code from.
 
-After the `PROTOBUF_GENERATE_CPP` function is called, you will have the above
-mentioned variables available. These will be marked as the output to a custom command
-which calls the protobuf compiler binary to generate them.
+## Generated Files - 文件生成
 
-To then have the files generated you should add them to a library or executable.
-For example:
+在调用过 `PROTOBUF_GENERATE_CPP` 函数之后，上述变量便可以被使用了，他们将被视为protobuf编译器执行特定命令生成的输出结果。
+
+ After the `PROTOBUF_GENERATE_CPP` function is called, you will have the above
+ mentioned variables available. These will be marked as the output to a custom command
+ which calls the protobuf compiler binary to generate them.
+
+为了进一步完成文件的生成，你需要将他们添加进库函数或者可执行文件中，例如：
+
+ To then have the files generated you should add them to a library or executable.
+ For example:
 
 [source,cmake]
 ----
@@ -83,14 +110,18 @@ add_executable(protobuf_example
     ${PROTO_HDRS})
 ----
 
-This will cause the protobuf compiler to be called when you call `make` on that
-executables target.
+这使得 `make` 这一命令被调用时，protobuf编译器也将随之被调用。
 
-When changes are made to the .proto file, the associated source files will be
-autogenerated again. However, if no changes are made to the .proto file and you re-run
-make, then nothing will be done.
+ This will cause the protobuf compiler to be called when you call `make` on that
+ executables target.
 
-# Building the Example
+当.proto文件被改变时，与其相关联的源代码文件也将被自动重新生成；不过，如果.proto文件没有发生修改，重新执行 `make` 命令，并不会发生任何变化。
+
+ When changes are made to the .proto file, the associated source files will be
+ autogenerated again. However, if no changes are made to the .proto file and you re-run
+ make, then nothing will be done.
+
+# Building the Example - 构建示例
 
 [source,bash]
 ----
