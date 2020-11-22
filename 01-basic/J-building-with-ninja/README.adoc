@@ -6,11 +6,9 @@ toc::[]
 
 ## 介绍
 
-As mentioned, CMake is a meta-build system that can be used to
- create the build files for many other build tools. This example shows how
- to have CMake use the https://ninja-build.org/[ninja build] tool.如前所述，CMake是一个元构建系统，可用于为许多其他构建工具创建构建文件。 这个例子展示了如何让CMake使用ninja构建工具。
+如前所述，CMake是一个元构建系统，可用于为许多其他构建工具创建构建文件。 这个例子展示了如何让CMake使用ninja构建工具。
 
-The files in this tutorial are below:
+## 文件树
 
 ```
 $ tree
@@ -19,18 +17,18 @@ $ tree
 ├── main.cpp
 ```
 
-  * link:CMakeLists.txt[] - Contains the CMake commands you wish to run
-  * link:main.cpp[] - A simple "Hello World" cpp file.
+  * link:CMakeLists.txt[] - CMake命令
+  * link:main.cpp[] - 一个简单的"Hello World" cpp文件.
 
-## Concepts
+## 解析
 
-### Generators
+### 生成器
 
-CMake https://cmake.org/cmake/help/v3.0/manual/cmake-generators.7.html[generators] are
+CMake  are
 responsible for writing the input files (e.g. Makefiles) for the underlying build system. Running `cmake --help`
 will show the generators available. For cmake v2.8.12.2 the generators supported
 on my system include:
-CMake生成器负责为基础构建系统编写输入文件（例如Makefile）。 运行cmake --help将显示可用的生成器。 对于cmake v2.8.12.2，我的系统支持的生成器包括：
+CMakehttps://cmake.org/cmake/help/v3.0/manual/cmake-generators.7.html[generators]负责为基础构建系统编写输入文件（例如Makefile）。 运行cmake --help将显示可用的生成器。 对于cmake v2.8.12.2，我的系统支持的生成器包括：
 
 [source,bash]
 ----

@@ -34,15 +34,18 @@
 
 项目在线阅读电子书地址：[通过例子学习CMake](https://sfumecjf.github.io/cmake-examples-Chinese/)
 
-本教程全部采用中文，通过一个个例子帮助读者由浅入深逐渐理解CMake的语法。教程非原创，主要来源于github优秀CMake项目，项目贡献者在翻译中，又查阅CMake官方手册，或者与已经工作的C++开发者交流，对于模糊的地方予以详细说明。
+本教程全部采用中文，通过一个个例子帮助读者由浅入深逐渐理解CMake的语法。教程主要来源于github优秀CMake项目，项目贡献者在翻译中，又查阅CMake官方手册，或者与已经工作的C++开发者交流，对于模糊的地方予以详细说明。
+
+非常适合完全没接触过CMake以及shell的人从头阅读。
 
 
 **觉得有用的话，希望给个star哦～**
 ##  什么是cmake
 CMake是一个跨平台的安装（编译）工具，可以用简单的语句来描述所有平台的安装(编译过程)。他能够输出各种各样的makefile或者project文件，CMake 的组态档取名为 CMakeLists.txt。也就是在CMakeLists.txt这个文件中写cmake代码。
 一句话：cmake就是将多个cpp、hpp文件组合构建为一个大工程的语言。
+
 ##  本cmake系列介绍
-首先大家学习cmake一定会遇到《cmake practice》这本书，但是纯粹讲理论，如果没有实践的话是学不会的。learning by doing是学习各种知识的不二法门。
+首先大家学习cmake一定会遇到《cmake practice》这本书，但是纯粹讲理论，如果没有实践的话是学不会的。<mark>learning by doing</mark>是学习各种知识的不二法门。
 
 
 
@@ -52,19 +55,17 @@ CMake是一个跨平台的安装（编译）工具，可以用简单的语句来
 
 ## 学习途径
 
-推荐在线阅读该电子书，快速过一遍知识点。时间充足想打基础的人，建议结合[原项目例子](https://github.com/ttroy50/cmake-examples)，在Linux系统下载运行代码。当遇到有疑问的地方，查阅本项目手册。
+推荐在线阅读该电子书，快速过一遍知识点。
+
+时间充足想打基础的人，可以结合[原项目例子](https://github.com/ttroy50/cmake-examples)，在Linux系统下载运行代码。当遇到有疑问的地方，查阅本项目手册。
 
 
 
-直接将本github克隆到本地或者fork,欢迎PR。
+点个star以后，直接将本github克隆到本地或者fork,欢迎PR。
 
 ```shell
 git clone https://github.com/SFUMECJF/cmake-examples-Chinese.git
 ```
-##  CSDN地址
-其实和本github的内容是一样的。
-CSDN专栏：https://blog.csdn.net/weixin_42089190/category_10449170.html
-
 ##  微信公众号
 最后，博主也只是一个初学者罢了，只是把自己学习过程中的东西做了总结，如果大家有什么想法，欢迎指正。我的微信公众号如下：
 现阶段主要总结计算机视觉知识：Qt，C++，CMake,OpenCV等等
