@@ -4,7 +4,7 @@
 
 toc::[]
 
-# Introduction - 简介
+## Introduction - 简介
 
 在CMake的调用过程中可能会使用CMakeList.txt和CMake缓存中的变量来创建文件；在CMake的生成过程中，该文件会被复制到新的位置，其中所有的变量将被使用他们的值替换。
 
@@ -34,9 +34,9 @@ $ tree
   * link:ver.h.in[] - 描述工程版本信息的文件
     ** link:ver.h.in[] - File to contain the version of the project
 
-# Concepts - 概念
+## Concepts - 概念
 
-## Configure Files - 配置文件
+### Configure Files - 配置文件
 
 在CMake中，你可以在文件中使用 `configure_file()` 函数进行变量的替换，这一函数的必要参数是源文件和目标文件。
 
@@ -69,7 +69,7 @@ const char* ver = "${cf_example_VERSION}";
 const char* path = "@CMAKE_SOURCE_DIR@";
 ```
 
-# Building the Example - 构建示例
+## 构建示例
 
 [source,bash]
 ----
