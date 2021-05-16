@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>介绍 · GitBook</title>
+        <title>子目录中使用多个CMake文件 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -60,6 +60,8 @@
     
     <link rel="next" href="A-basic/" />
     
+    
+    <link rel="prev" href="../01-basic/1.11 cpp-standard.html" />
     
 
     <style>
@@ -217,9 +219,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.8" data-path="../01-basic/I-compiling-with-clang/">
+        <li class="chapter " data-level="1.2.8" data-path="../01-basic/1.8 compiling-with-clang.html">
             
-                <a href="../01-basic/I-compiling-with-clang/">
+                <a href="../01-basic/1.8 compiling-with-clang.html">
             
                     
                     1.8  使用clang编译工程
@@ -230,9 +232,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.9" data-path="../01-basic/J-building-with-ninja/">
+        <li class="chapter " data-level="1.2.9" data-path="../01-basic/1.9 J-building-with-ninja.html">
             
-                <a href="../01-basic/J-building-with-ninja/">
+                <a href="../01-basic/1.9 J-building-with-ninja.html">
             
                     
                     1.9  使用ninja构建工程
@@ -243,9 +245,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.10" data-path="../01-basic/K-imported-targets/">
+        <li class="chapter " data-level="1.2.10" data-path="../01-basic/1.10 imported-targets.html">
             
-                <a href="../01-basic/K-imported-targets/">
+                <a href="../01-basic/1.10 imported-targets.html">
             
                     
                     1.10  导入目标
@@ -256,9 +258,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.11" data-path="../01-basic/L-cpp-standard/">
+        <li class="chapter " data-level="1.2.11" data-path="../01-basic/1.11 cpp-standard.html">
             
-                <a href="../01-basic/L-cpp-standard/">
+                <a href="../01-basic/1.11 cpp-standard.html">
             
                     
                     1.11 C++标准
@@ -274,34 +276,21 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" >
+        <li class="chapter active" data-level="1.3" data-path="./">
             
-                <span>
+                <a href="./">
             
                     
-                    2  子目录中使用多个CMake文件
+                    子目录中使用多个CMake文件
             
-                </span>
+                </a>
             
 
             
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="./">
-            
-                <a href="./">
-            
-                    
-                    介绍
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2" data-path="A-basic/">
+        <li class="chapter " data-level="1.3.1" data-path="A-basic/">
             
                 <a href="A-basic/">
             
@@ -319,34 +308,21 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" >
+        <li class="chapter " data-level="1.4" data-path="../03-code-generation/">
             
-                <span>
+                <a href="../03-code-generation/">
             
                     
-                    3  生成源代码
+                    生成源代码
             
-                </span>
+                </a>
             
 
             
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../03-code-generation/">
-            
-                <a href="../03-code-generation/">
-            
-                    
-                    介绍
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.2" data-path="../03-code-generation/configure-files/">
+        <li class="chapter " data-level="1.4.1" data-path="../03-code-generation/configure-files/">
             
                 <a href="../03-code-generation/configure-files/">
             
@@ -359,12 +335,44 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../03-code-generation/protobuf/">
+        <li class="chapter " data-level="1.4.2" data-path="../03-code-generation/protobuf/">
             
                 <a href="../03-code-generation/protobuf/">
             
                     
                     3.2  protobuf
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    细节思考
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../CMake-scope.html">
+            
+                <a href="../CMake-scope.html">
+            
+                    
+                    PUBLIC、INTERFACE和PRIVATE
             
                 </a>
             
@@ -407,7 +415,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >介绍</a>
+        <a href=".." >子目录中使用多个CMake文件</a>
     </h1>
 </div>
 
@@ -422,19 +430,17 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="sub-project-examples">Sub-Project Examples</h1>
+                                <h1 id="&#x5B50;&#x9879;&#x76EE;">&#x5B50;&#x9879;&#x76EE;</h1>
 <div class="paragraph">
-<p>Many large projects are made up of different libraries and binaries. These
-can be organised into multiple folders and sub-projects to ease development.</p>
+<p>&#x8BB8;&#x591A;&#x5927;&#x578B;&#x9879;&#x76EE;&#x7531;&#x4E0D;&#x540C;&#x7684;&#x5E93;&#x548C;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x7EC4;&#x6210;&#x3002;&#x672C;&#x6587;&#x5229;&#x7528;&#x591A;&#x4E2A;CMakeLists.txt&#x6587;&#x4EF6;&#x7EC4;&#x7EC7;&#x8FD9;&#x4E9B;&#x5E93;&#x548C;&#x6587;&#x4EF6;&#x3002;</p>
 </div>
 <div class="paragraph">
-<p>The examples included are</p>
+<p>&#x5305;&#x62EC;&#x7684;&#x793A;&#x4F8B;&#x662F;</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="A-basic">basic</a> - This basic example includes a static library, a header only library
-and an executable</p>
+<p><a href="A-basic">basic</a> - &#x6B64;&#x57FA;&#x672C;&#x793A;&#x4F8B;&#x5305;&#x62EC;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x5E93;&#xFF0C;&#x4E00;&#x4E2A;&#x4EC5;&#x6709;&#x5934;&#x6587;&#x4EF6;&#x7684;&#x5E93;&#x548C;&#x4E00;&#x4E2A;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x3002;</p>
 </li>
 </ul>
 </div>
@@ -464,8 +470,12 @@ and an executable</p>
 
             
                 
+                <a href="../01-basic/1.11 cpp-standard.html" class="navigation navigation-prev " aria-label="Previous page: 1.11 C++标准">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="A-basic/" class="navigation navigation-next navigation-unique" aria-label="Next page: 2.1 使用子工程CMake">
+                
+                <a href="A-basic/" class="navigation navigation-next " aria-label="Next page: 2.1 使用子工程CMake">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -476,7 +486,7 @@ and an executable</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"介绍","level":"1.3.1","depth":2,"next":{"title":"2.1 使用子工程CMake","level":"1.3.2","depth":2,"path":"02-sub-projects/A-basic/README.adoc","ref":"02-sub-projects/A-basic/README.adoc","articles":[]},"previous":{"title":"2  子目录中使用多个CMake文件","level":"1.3","depth":1,"ref":"","articles":[{"title":"介绍","level":"1.3.1","depth":2,"path":"02-sub-projects/README.adoc","ref":"02-sub-projects/README.adoc","articles":[]},{"title":"2.1 使用子工程CMake","level":"1.3.2","depth":2,"path":"02-sub-projects/A-basic/README.adoc","ref":"02-sub-projects/A-basic/README.adoc","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github-buttons","livereload"],"pluginsConfig":{"github-buttons":{"buttons":[{"user":"SFUMECJF","repo":"cmake-examples-Chinese","type":"star","size":"large"},{"user":"SFUMECJF","type":"follow","width":"230","count":false}]},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"02-sub-projects/README.adoc","mtime":"2020-11-15T14:15:37.324Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2020-11-22T09:33:28.017Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"子目录中使用多个CMake文件","level":"1.3","depth":1,"next":{"title":"2.1 使用子工程CMake","level":"1.3.1","depth":2,"path":"02-sub-projects/A-basic/README.adoc","ref":"02-sub-projects/A-basic/README.adoc","articles":[]},"previous":{"title":"1.11 C++标准","level":"1.2.11","depth":2,"path":"01-basic/1.11 cpp-standard.adoc","ref":"01-basic/1.11 cpp-standard.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github-buttons","livereload"],"pluginsConfig":{"github-buttons":{"buttons":[{"user":"SFUMECJF","repo":"cmake-examples-Chinese","type":"star","size":"large"},{"user":"SFUMECJF","type":"follow","width":"230","count":false}]},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"02-sub-projects/README.adoc","mtime":"2021-05-16T06:11:53.933Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2021-05-16T08:46:33.216Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

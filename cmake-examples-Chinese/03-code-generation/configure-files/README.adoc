@@ -1,0 +1,127 @@
+= Configure Files Generation - 使用配置文件的代码生成
+:toc:
+:toc-placement!:
+
+toc::[]
+
+## Introduction - 简介
+
+在CMake的调用过程中可能会使用CMakeList.txt和CMake缓存中的变量来创建文件；在CMake的生成过程中，该文件会被复制到新的位置，其中所有的变量将被使用他们的值替换。
+
+ During the call to cmake it is possible to create files that use variables from
+ the CMakeLists.txt and cmake cache. During CMake generation the file is copied to a
+ new location and any cmake variables are replaced.
+
+本教程的目录结构如下所示：
+
+ The files in this tutorial are below:
+
+```
+$ tree
+.
+├── CMakeLists.txt
+├── main.cpp
+├── path.h.in
+├── ver.h.in
+```
+
+  * link:CMakeLists.txt[] - 描述你希望能够运行的CMake命令
+    ** link:CMakeLists.txt[] - Contains the CMake commands you wish to run
+  * link:main.cpp[] - 包含主函数的源文件
+    ** link:main.cpp[] - The source file with main
+  * link:path.h.in[] - 描述待构建目录的文件
+    ** link:path.h.in[] - File to contain a path to the build directory
+  * link:ver.h.in[] - 描述工程版本信息的文件
+    ** link:ver.h.in[] - File to contain the version of the project
+
+## Concepts - 概念
+
+### Configure Files - 配置文件
+
+在CMake中，你可以在文件中使用 `configure_file()` 函数进行变量的替换，这一函数的必要参数是源文件和目标文件。
+
+ To do variable substitution in a file you can use the `configure_file()` function
+ in CMake. This core arguments for this function are source file and destination file.
+
+[source,cmake]
+----
+configure_file(ver.h.in ${PROJECT_BINARY_DIR}/ver.h)
+
+configure_file(path.h.in ${PROJECT_BINARY_DIR}/path.h @ONLY)
+----
+
+第一个例子，在ver.h.in文件中，CMake可以将使用 `${}` 或 `@@` 的语法来定义一个CMake变量。在执行代码生成之后，在 `PROJECT_BINARY_DIR` 目录下将会出现一个新的ver.h文件。
+
+ The first example above, allows the variable to be defined like a CMake variables using
+ the `${}` syntax or an `@@` in the ver.h.in file. After generation a new file ver.h will be available
+ in the `PROJECT_BINARY_DIR`.
+
+```
+const char* ver = "${cf_example_VERSION}";
+```
+
+第二个例子，在path.h.in文件中，`@ONLY` 指定了它只能用 `@@` 的语法来定义一个CMake变量。同样地，在执行代码生成之后，在 `PROJECT_BINARY_DIR` 目录下将会出现一个新的path.h文件。
+
+ The second example, only allows variables to be defined using the `@@` syntax in the path.h.in file.
+ After generation a new file path.h will be available in the `PROJECT_BINARY_DIR`.
+
+```
+const char* path = "@CMAKE_SOURCE_DIR@";
+```
+
+## 构建示例
+
+[source,bash]
+----
+$ mkdir build
+
+$ cd build/
+
+$ cmake ..
+-- The C compiler identification is GNU 4.8.4
+-- The CXX compiler identification is GNU 4.8.4
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/matrim/workspace/cmake-examples/03-code-generation/configure-files/build
+
+$ ls
+CMakeCache.txt  CMakeFiles  cmake_install.cmake  Makefile  path.h  ver.h
+
+$ cat path.h
+#ifndef __PATH_H__
+#define __PATH_H__
+
+// version variable that will be substituted by cmake
+// This shows an example using the @ variable type
+const char* path = "/home/matrim/workspace/cmake-examples/03-code-generation/configure-files";
+
+#endif
+
+$ cat ver.h
+#ifndef __VER_H__
+#define __VER_H__
+
+// version variable that will be substituted by cmake
+// This shows an example using the $ variable type
+const char* ver = "0.2.1";
+
+#endif
+
+$ make
+Scanning dependencies of target cf_example
+[100%] Building CXX object CMakeFiles/cf_example.dir/main.cpp.o
+Linking CXX executable cf_example
+[100%] Built target cf_example
+
+$ ./cf_example
+Hello Version 0.2.1!
+Path is /home/matrim/workspace/cmake-examples/03-code-generation/configure-files
+----
