@@ -1,0 +1,20 @@
+{
+  "plugins": [
+    "github-buttons"
+  ],
+  "pluginsConfig": {
+    "github-buttons": {
+      "buttons": [{
+        "user": "SFUMECJF",
+        "repo": "cmake-examples-Chinese",
+        "type": "star",
+        "size": "large"
+      }, {
+        "user": "SFUMECJF",
+        "type": "follow",
+        "width": "230",
+        "count": false
+      }]
+    }
+  }
+}

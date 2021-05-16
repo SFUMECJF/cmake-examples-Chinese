@@ -1,9 +1,7 @@
-= Sub-Project Examples
+= 子项目
 
-Many large projects are made up of different libraries and binaries. These
-can be organised into multiple folders and sub-projects to ease development.
+许多大型项目由不同的库和二进制文件组成。本文利用多个CMakeLists.txt文件组织这些库和文件。
 
-The examples included are
+包括的示例是
 
-  - link:A-basic[basic] - This basic example includes a static library, a header only library
-  and an executable
+  - link:A-basic[basic] - 此基本示例包括一个静态库，一个仅有头文件的库和一个可执行文件。
