@@ -24,10 +24,6 @@ $ tree
 
 ### 生成器
 
-CMake  are
-responsible for writing the input files (e.g. Makefiles) for the underlying build system. Running `cmake --help`
-will show the generators available. For cmake v2.8.12.2 the generators supported
-on my system include:
 CMakehttps://cmake.org/cmake/help/v3.0/manual/cmake-generators.7.html[generators]负责为基础构建系统编写输入文件（例如Makefile）。 运行cmake --help将显示可用的生成器。 对于cmake v2.8.12.2，我的系统支持的生成器包括：
 
 [source,bash]
@@ -49,8 +45,7 @@ The following generators are available on this platform:
                               = Generates Sublime Text 2 project files.Generators
 ----
 
-As specified in this https://stackoverflow.com/questions/25941536/what-is-a-cmake-generator[post],
-CMake includes different types of generators such as Command-Line, IDE, and Extra generators.如本文所指定，CMake包括不同类型的生成器，例如命令行，IDE和其他生成器。
+如 https://stackoverflow.com/questions/25941536/what-is-a-cmake-generator[post]所指定，CMake包括不同类型的生成器，例如命令行，IDE和其他生成器。
 
 #### Command-Line Build Tool Generators命令行编译工具生成器
 
