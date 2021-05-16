@@ -1,0 +1,12 @@
+= C++ Standard
+
+自C ++ 11和C ++ 14发行以来，普遍做法是调用编译器以使用这些标准。 随着CMake的发展，有了新的使用这些标准的方式。
+
+
+以下示例显示了设置C ++标准的不同方法，以及提供哪些版本的CMake。
+
+The examples include:
+
+  - link:i-common-method[common-method]. 可以与大多数版本的CMake一起使用的简单方法。
+  - link:ii-cxx-standard[cxx-standard]. 使用CMake v3.1中引入的CMAKE_CXX_STANDARD变量。
+  - link:iii-compile-features[compile-features]. 使用CMake v3.1中引入的target_compile_features函数。
