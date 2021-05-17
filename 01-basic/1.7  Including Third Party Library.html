@@ -1,0 +1,665 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.7  包含第三方库 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1.8 compiling-with-clang.html" />
+    
+    
+    <link rel="prev" href="1.6  Compile Flags.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"SFUMECJF","repo":"cmake-examples-Chinese","type":"star","size":"large"},{"user":"SFUMECJF","type":"follow","width":"230","count":false}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1  基本例程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.1  hello-cmake.html">
+            
+                <a href="1.1  hello-cmake.html">
+            
+                    
+                    1.1  hello-CMake
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="1.2  hello-headers.html">
+            
+                <a href="1.2  hello-headers.html">
+            
+                    
+                    1.2  包含头文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1.3  Static Library.html">
+            
+                <a href="1.3  Static Library.html">
+            
+                    
+                    1.3  包含静态库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="1.4  Shared Library.html">
+            
+                <a href="1.4  Shared Library.html">
+            
+                    
+                    1.4  包含动态库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="1.5  build-type.html">
+            
+                <a href="1.5  build-type.html">
+            
+                    
+                    1.5  设置构建类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="1.6  Compile Flags.html">
+            
+                <a href="1.6  Compile Flags.html">
+            
+                    
+                    1.6  设置编译方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.7" data-path="1.7  Including Third Party Library.html">
+            
+                <a href="1.7  Including Third Party Library.html">
+            
+                    
+                    1.7  包含第三方库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="1.8 compiling-with-clang.html">
+            
+                <a href="1.8 compiling-with-clang.html">
+            
+                    
+                    1.8  使用clang编译工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="1.9 J-building-with-ninja.html">
+            
+                <a href="1.9 J-building-with-ninja.html">
+            
+                    
+                    1.9  使用ninja构建工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="1.10 imported-targets.html">
+            
+                <a href="1.10 imported-targets.html">
+            
+                    
+                    1.10  导入目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="1.11 cpp-standard.html">
+            
+                <a href="1.11 cpp-standard.html">
+            
+                    
+                    1.11 C++标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../02-sub-projects/">
+            
+                <a href="../02-sub-projects/">
+            
+                    
+                    子目录中使用多个CMake文件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../02-sub-projects/A-basic/">
+            
+                <a href="../02-sub-projects/A-basic/">
+            
+                    
+                    2.1 使用子工程CMake
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../03-code-generation/">
+            
+                <a href="../03-code-generation/">
+            
+                    
+                    生成源代码
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../03-code-generation/configure-files/">
+            
+                <a href="../03-code-generation/configure-files/">
+            
+                    
+                    3.1  配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../03-code-generation/protobuf/">
+            
+                <a href="../03-code-generation/protobuf/">
+            
+                    
+                    3.2  protobuf
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    细节思考
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../CMake-scope.html">
+            
+                <a href="../CMake-scope.html">
+            
+                    
+                    PUBLIC、INTERFACE和PRIVATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1.7  包含第三方库</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x89C6;&#x89C9;&#x7B14;&#x8BB0;cmake&#xFF08;&#x4E03;&#xFF09;-including-third-party-library">&#x89C6;&#x89C9;&#x7B14;&#x8BB0;CMake&#xFF08;&#x4E03;&#xFF09; <strong>Including Third Party Library</strong></h1>
+<p>&#x672C;CMake&#x7CFB;&#x5217;&#x662F;&#x4F9D;&#x636E;github&#x4E0A;&#x7684;cmake-examples&#x8FDB;&#x884C;&#x7FFB;&#x8BD1;&#x603B;&#x7ED3;&#x3002;&#x540C;&#x65F6;&#x5BF9;&#x4E8E;&#x4E0D;&#x61C2;&#x7684;&#x5730;&#x65B9;&#x8FDB;&#x884C;&#x603B;&#x7ED3;&#x4E0E;&#x6807;&#x6CE8;&#x3002;&#x5E0C;&#x671B;&#x672C;&#x7CFB;&#x5217;&#x80FD;&#x8282;&#x7701;&#x4F60;&#x5B66;&#x4E60;CMake&#x7684;&#x65F6;&#x95F4;&#x3002;</p>
+<p>&#x5B66;&#x4E60;&#x65B9;&#x5F0F;&#x662F;&#x5728;&#x5B9E;&#x8DF5;&#x4E2D;&#x5229;&#x7528;github&#x4E0A;&#x7684;example&#x5B66;&#x4E60;&#xFF0C;&#x540C;&#x65F6;&#x5BF9;&#x4E8E;&#x4E0D;&#x61C2;&#x7684;&#x5730;&#x65B9;&#x4E3B;&#x8981;&#x901A;&#x8FC7;&#x7FFB;&#x8BD1;&#x5B98;&#x65B9;&#x624B;&#x518C;&#x5B66;&#x4E60;&#xFF0C;&#x5176;&#x6B21;&#x662F;&#x67E5;&#x627E;&#x535A;&#x5BA2;&#x4E0A;&#x7684;&#x79C1;&#x4EBA;&#x7406;&#x89E3;&#x3002;</p>
+<p>&#x56E0;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;example&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x5DE5;&#x7A0B;&#xFF0C;&#x6240;&#x4EE5;&#x8BB2;&#x89E3;&#x65F6;&#x4F1A;&#x5229;&#x7528;&#x6587;&#x4EF6;&#x6811;&#x89E3;&#x91CA;&#x6BCF;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x91CC;&#x7684;&#x8BED;&#x6CD5;&#x3002;</p>
+<p><a href="https://github.com/ttroy50/cmake-examples" target="_blank">&#x82F1;&#x6587;github&#x5730;&#x5740;</a>&#xFF1A;<a href="https://github.com/ttroy50/cmake-examples" target="_blank">https://github.com/ttroy50/cmake-examples</a></p>
+<p>CMake&#x82F1;&#x6587;&#x5B98;&#x65B9;&#x6559;&#x7A0B;&#xFF1A; <a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html" target="_blank">https://cmake.org/cmake/help/latest/guide/tutorial/index.html</a> </p>
+<p>[TOC]</p>
+<h2 id="&#x4E00;--&#x6587;&#x4EF6;&#x6811;">&#x4E00;  &#x6587;&#x4EF6;&#x6811;</h2>
+<pre><code class="lang-tree">&#x251C;&#x2500;&#x2500; CMakeLists.txt
+&#x251C;&#x2500;&#x2500; main.cpp
+</code></pre>
+<h3 id="11--maincpp">1.1  main.cpp</h3>
+<pre><code class="lang-c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;boost/shared_ptr.hpp&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;boost/filesystem.hpp&gt;</span></span>
+<span class="hljs-comment">/*Boost&#x5E93;&#x662F;&#x4E3A;C++&#x8BED;&#x8A00;&#x6807;&#x51C6;&#x5E93;&#x63D0;&#x4F9B;&#x6269;&#x5C55;&#x7684;&#x4E00;&#x4E9B;C++&#x7A0B;&#x5E8F;&#x5E93;&#x7684;&#x603B;&#x79F0;&#xFF0C;&#x7531;Boost&#x793E;&#x533A;&#x7EC4;&#x7EC7;&#x5F00;&#x53D1;&#x3001;
+&#x7EF4;&#x62A4;&#x3002;Boost&#x5E93;&#x53EF;&#x4EE5;&#x4E0E;C++&#x6807;&#x51C6;&#x5E93;&#x5B8C;&#x7F8E;&#x5171;&#x540C;&#x5DE5;&#x4F5C;&#xFF0C;&#x5E76;&#x4E14;&#x4E3A;&#x5176;&#x63D0;&#x4F9B;&#x6269;&#x5C55;&#x529F;&#x80FD;&#x3002;
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Hello Third Party Include!&quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-comment">// use a shared ptr</span>
+    boost::<span class="hljs-built_in">shared_ptr</span>&lt;<span class="hljs-keyword">int</span>&gt; isp(<span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>(<span class="hljs-number">4</span>));
+
+    <span class="hljs-comment">// trivial use of boost filesystem</span>
+    boost::filesystem::path path = <span class="hljs-string">&quot;/usr/share/cmake/modules&quot;</span>;
+    <span class="hljs-keyword">if</span>(path.is_relative())
+    {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Path is relative&quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+    }
+    <span class="hljs-keyword">else</span>
+    {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Path is not relative&quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+    }
+
+   <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h3 id="12--cmakeliststxt">1.2  CMakeLists.txt</h3>
+<pre><code class="lang-cmake"><span class="hljs-keyword">cmake_minimum_required</span>(VERSION <span class="hljs-number">3.5</span>)
+
+<span class="hljs-comment"># Set the project name</span>
+<span class="hljs-keyword">project</span> (third_party_include)
+<span class="hljs-comment"># find a boost install with the libraries filesystem and system</span>
+<span class="hljs-comment">#&#x4F7F;&#x7528;&#x5E93;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x548C;&#x7CFB;&#x7EDF;&#x67E5;&#x627E;boost install</span>
+<span class="hljs-keyword">find_package</span>(Boost <span class="hljs-number">1.46</span>.<span class="hljs-number">1</span> REQUIRED COMPONENTS filesystem system)
+<span class="hljs-comment">#&#x8FD9;&#x662F;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x81EA;&#x5DF1;&#x751F;&#x6210;&#x7684;&#x9759;&#x6001;&#x52A8;&#x6001;&#x5E93;</span>
+<span class="hljs-comment"># check if boost was found</span>
+<span class="hljs-keyword">if</span>(Boost_FOUND)
+    <span class="hljs-keyword">message</span> (<span class="hljs-string">&quot;boost found&quot;</span>)
+<span class="hljs-keyword">else</span>()
+    <span class="hljs-keyword">message</span> (FATAL_ERROR <span class="hljs-string">&quot;Cannot find Boost&quot;</span>)
+<span class="hljs-keyword">endif</span>()
+
+<span class="hljs-comment"># Add an executable</span>
+<span class="hljs-keyword">add_executable</span>(third_party_include main.cpp)
+
+<span class="hljs-comment"># link against the boost libraries</span>
+<span class="hljs-keyword">target_link_libraries</span>( third_party_include
+    PRIVATE
+        Boost::filesystem
+)
+</code></pre>
+<h2 id="&#x4E8C;--cmake&#x89E3;&#x6790;">&#x4E8C;  CMake&#x89E3;&#x6790;</h2>
+<p> &#x51E0;&#x4E4E;&#x6240;&#x6709;&#x4E0D;&#x5E73;&#x51E1;&#x7684;&#x9879;&#x76EE;&#x90FD;&#x5C06;&#x8981;&#x6C42;&#x5305;&#x542B;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#xFF0C;&#x5934;&#x6587;&#x4EF6;&#x6216;&#x7A0B;&#x5E8F;&#x3002; CMake&#x652F;&#x6301;&#x4F7F;&#x7528;find_package&#xFF08;&#xFF09;&#x51FD;&#x6570;&#x67E5;&#x627E;&#x8FD9;&#x4E9B;&#x5DE5;&#x5177;&#x7684;&#x8DEF;&#x5F84;&#x3002; &#x8FD9;&#x5C06;&#x4ECE;CMAKE_MODULE_PATH&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x5939;&#x5217;&#x8868;&#x4E2D;&#x641C;&#x7D22;&#x683C;&#x5F0F;&#x4E3A;&#x201C; FindXXX.cmake&#x201D;&#x7684;CMake&#x6A21;&#x5757;&#x3002; &#x5728;linux&#x4E0A;&#xFF0C;&#x9ED8;&#x8BA4;&#x641C;&#x7D22;&#x8DEF;&#x5F84;&#x5C06;&#x662F;/ usr / share / cmake / Modules&#x3002; &#x5728;&#x6211;&#x7684;&#x7CFB;&#x7EDF;&#x4E0A;&#xFF0C;&#x8FD9;&#x5305;&#x62EC;&#x5BF9;&#x5927;&#x7EA6;142&#x4E2A;&#x901A;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x7684;&#x652F;&#x6301;&#x3002; </p>
+<p> &#x6B64;&#x793A;&#x4F8B;&#x8981;&#x6C42;&#x5C06;Boost&#x5E93;&#x5B89;&#x88C5;&#x5728;&#x9ED8;&#x8BA4;&#x7CFB;&#x7EDF;&#x4F4D;&#x7F6E;&#x3002; </p>
+<h3 id="21--finding-a-package">2.1  Finding a Package</h3>
+<p> &#x5982;&#x4E0A;&#x6240;&#x8FF0;&#xFF0C;find_package&#xFF08;&#xFF09;&#x51FD;&#x6570;&#x5C06;&#x4ECE;CMAKE_MODULE_PATH&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x5939;&#x5217;&#x8868;&#x4E2D;&#x641C;&#x7D22;&#x201C; FindXXX.cmake&#x201D;&#x4E2D;&#x7684;CMake&#x6A21;&#x5757;&#x3002; find_package&#x53C2;&#x6570;&#x7684;&#x786E;&#x5207;&#x683C;&#x5F0F;&#x53D6;&#x51B3;&#x4E8E;&#x8981;&#x67E5;&#x627E;&#x7684;&#x6A21;&#x5757;&#x3002; &#x8FD9;&#x901A;&#x5E38;&#x8BB0;&#x5F55;&#x5728;FindXXX.cmake&#x6587;&#x4EF6;&#x7684;&#x9876;&#x90E8;&#x3002; </p>
+<pre><code class="lang-cmake"><span class="hljs-keyword">find_package</span>(Boost <span class="hljs-number">1.46</span>.<span class="hljs-number">1</span> REQUIRED COMPONENTS filesystem system)
+</code></pre>
+<p>&#x53C2;&#x6570;&#xFF1A;</p>
+<p> Boost-&#x5E93;&#x540D;&#x79F0;&#x3002; &#x8FD9;&#x662F;&#x7528;&#x4E8E;&#x67E5;&#x627E;&#x6A21;&#x5757;&#x6587;&#x4EF6;FindBoost.cmake&#x7684;&#x4E00;&#x90E8;&#x5206; </p>
+<p> 1.46.1 - &#x9700;&#x8981;&#x7684;boost&#x5E93;&#x6700;&#x4F4E;&#x7248;&#x672C; </p>
+<p> REQUIRED - &#x544A;&#x8BC9;&#x6A21;&#x5757;&#x8FD9;&#x662F;&#x5FC5;&#x9700;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x627E;&#x4E0D;&#x5230;&#x4F1A;&#x62A5;&#x9519;</p>
+<p> COMPONENTS - &#x8981;&#x67E5;&#x627E;&#x7684;&#x5E93;&#x5217;&#x8868;&#x3002;&#x4ECE;&#x540E;&#x9762;&#x7684;&#x53C2;&#x6570;&#x4EE3;&#x8868;&#x7684;&#x5E93;&#x91CC;&#x627E;boost </p>
+<p> &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x66F4;&#x591A;&#x53C2;&#x6570;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x53D8;&#x91CF;&#x3002; &#x5728;&#x540E;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x590D;&#x6742;&#x7684;&#x8BBE;&#x7F6E;&#x3002; </p>
+<h3 id="22-checking-if-the-package-is-found">2.2 Checking if the package is found</h3>
+<p>&#x5927;&#x591A;&#x6570;&#x88AB;&#x5305;&#x542B;&#x7684;&#x5305;&#x5C06;&#x8BBE;&#x7F6E;&#x53D8;&#x91CF;XXX_FOUND&#xFF0C;&#x8BE5;&#x53D8;&#x91CF;&#x53EF;&#x7528;&#x4E8E;&#x68C0;&#x67E5;&#x8F6F;&#x4EF6;&#x5305;&#x5728;&#x7CFB;&#x7EDF;&#x4E0A;&#x662F;&#x5426;&#x53EF;&#x7528;&#x3002;</p>
+<p>&#x5728;&#x6B64;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x53D8;&#x91CF;&#x4E3A;Boost_FOUND&#xFF1A;</p>
+<pre><code class="lang-cmake"><span class="hljs-keyword">if</span>(Boost_FOUND)
+    <span class="hljs-keyword">message</span> (<span class="hljs-string">&quot;boost found&quot;</span>)
+    <span class="hljs-keyword">include_directories</span>(<span class="hljs-variable">${Boost_INCLUDE_DIRS}</span>)
+<span class="hljs-keyword">else</span>()
+    <span class="hljs-keyword">message</span> (FATAL_ERROR <span class="hljs-string">&quot;Cannot find Boost&quot;</span>)
+<span class="hljs-keyword">endif</span>()
+</code></pre>
+<h3 id="23--exported-variables">2.3  Exported Variables</h3>
+<p>  &#x627E;&#x5230;&#x5305;&#x540E;&#xFF0C;&#x5B83;&#x4F1A;&#x81EA;&#x52A8;&#x5BFC;&#x51FA;&#x53D8;&#x91CF;&#xFF0C;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x53EF;&#x4EE5;&#x901A;&#x77E5;&#x7528;&#x6237;&#x5728;&#x54EA;&#x91CC;&#x53EF;&#x4EE5;&#x627E;&#x5230;&#x5E93;&#xFF0C;&#x5934;&#x6587;&#x4EF6;&#x6216;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x3002; &#x4E0E;XXX_FOUND&#x53D8;&#x91CF;&#x7C7B;&#x4F3C;&#xFF0C;&#x5B83;&#x4EEC;&#x4E0E;&#x5305;&#x7ED1;&#x5B9A;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x901A;&#x5E38;&#x8BB0;&#x5F55;&#x5728;FindXXX.cmake&#x6587;&#x4EF6;&#x7684;&#x9876;&#x90E8;&#x3002; </p>
+<p> &#x672C;&#x4F8B;&#x4E2D;&#x7684;&#x53D8;&#x91CF; </p>
+<pre><code>Boost_INCLUDE_DIRS - boost&#x5934;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;
+</code></pre><p> &#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528;ccmake&#x6216;cmake-gui&#x68C0;&#x67E5;&#x7F13;&#x5B58;&#x6765;&#x68C0;&#x67E5;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x3002; </p>
+<h3 id="24--alias--imported-targets&#x522B;&#x540D;&#x5BFC;&#x5165;&#x76EE;&#x6807;">2.4  Alias / Imported targets&#x522B;&#x540D;/&#x5BFC;&#x5165;&#x76EE;&#x6807;</h3>
+<p> &#x5927;&#x591A;&#x6570;modern CMake&#x5E93;&#x5728;&#x5176;&#x6A21;&#x5757;&#x6587;&#x4EF6;&#x4E2D;&#x5BFC;&#x51FA;&#x522B;&#x540D;&#x76EE;&#x6807;&#x3002;  &#x5BFC;&#x5165;&#x76EE;&#x6807;&#x7684;&#x597D;&#x5904;&#x662F;&#x5B83;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x586B;&#x5145;&#x5305;&#x542B;&#x76EE;&#x5F55;&#x548C;&#x94FE;&#x63A5;&#x7684;&#x5E93;&#x3002;  &#x4F8B;&#x5982;&#xFF0C;&#x4ECE;CMake v3.5&#x5F00;&#x59CB;&#xFF0C;Boost&#x6A21;&#x5757;&#x652F;&#x6301;&#x6B64;&#x529F;&#x80FD;&#x3002; &#x4E0E;&#x4F7F;&#x7528;&#x81EA;&#x5DF1;&#x7684;&#x522B;&#x540D;&#x76EE;&#x6807;&#x76F8;&#x4F3C;&#xFF0C;&#x6A21;&#x5757;&#x4E2D;&#x7684;&#x522B;&#x540D;&#x53EF;&#x4EE5;&#x4F7F;&#x5F15;&#x7528;&#x627E;&#x5230;&#x7684;&#x76EE;&#x6807;&#x53D8;&#x5F97;&#x66F4;&#x52A0;&#x5BB9;&#x6613;&#x3002;  &#x5BF9;&#x4E8E;Boost&#xFF0C;&#x6240;&#x6709;&#x76EE;&#x6807;&#x5747;&#x4F7F;&#x7528;Boost ::&#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x5B50;&#x7CFB;&#x7EDF;&#x540D;&#x79F0;&#x5BFC;&#x51FA;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF1A; </p>
+<ul>
+<li><code>Boost::boost</code> for header only libraries</li>
+<li><code>Boost::system</code> for the boost system library.</li>
+<li><p><code>Boost::filesystem</code> for filesystem library.</p>
+<p>&#x4E0E;&#x60A8;&#x81EA;&#x5DF1;&#x7684;&#x76EE;&#x6807;&#x4E00;&#x6837;&#xFF0C;&#x8FD9;&#x4E9B;&#x76EE;&#x6807;&#x5305;&#x62EC;&#x5B83;&#x4EEC;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x56E0;&#x6B64;&#x4E0E;Boost :: filesystem&#x94FE;&#x63A5;&#x5C06;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;Boost :: boost&#x548C;Boost :: system&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x3002; </p>
+<p>&#x8981;&#x94FE;&#x63A5;&#x5230;&#x5BFC;&#x5165;&#x7684;&#x76EE;&#x6807;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A; </p>
+</li>
+</ul>
+<pre><code class="lang-cmake"><span class="hljs-keyword">target_link_libraries</span>( third_party_include
+      PRIVATE
+          Boost::filesystem
+  )
+</code></pre>
+<h3 id="25--non-alias-targets">2.5  Non-alias targets</h3>
+<p> &#x5C3D;&#x7BA1;&#x5927;&#x591A;&#x6570;&#x73B0;&#x4EE3;&#x5E93;&#x90FD;&#x4F7F;&#x7528;&#x5BFC;&#x5165;&#x7684;&#x76EE;&#x6807;&#xFF0C;&#x4F46;&#x5E76;&#x975E;&#x6240;&#x6709;&#x6A21;&#x5757;&#x90FD;&#x5DF2;&#x66F4;&#x65B0;&#x3002; &#x5982;&#x679C;&#x672A;&#x66F4;&#x65B0;&#x5E93;&#xFF0C;&#x5219;&#x901A;&#x5E38;&#x4F1A;&#x53D1;&#x73B0;&#x4EE5;&#x4E0B;&#x53EF;&#x7528;&#x53D8;&#x91CF;&#xFF1A; </p>
+<ul>
+<li><p>xxx_INCLUDE_DIRS - &#x6307;&#x5411;&#x5E93;&#x7684;&#x5305;&#x542B;&#x76EE;&#x5F55;&#x7684;&#x53D8;&#x91CF;&#x3002;</p>
+</li>
+<li><p>xxx_LIBRARY - &#x6307;&#x5411;&#x5E93;&#x8DEF;&#x5F84;&#x7684;&#x53D8;&#x91CF;&#x3002;</p>
+<p>   &#x7136;&#x540E;&#x53EF;&#x4EE5;&#x5C06;&#x5B83;&#x4EEC;&#x6DFB;&#x52A0;&#x5230;&#x60A8;&#x7684;target_include_directories&#x548C;target_link_libraries&#x4E2D;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A; </p>
+<pre><code class="lang-cmake">  <span class="hljs-comment"># Include the boost headers</span>
+  target_include_directories( third_party_include
+      PRIVATE <span class="hljs-variable">${Boost_INCLUDE_DIRS}</span>
+  )
+
+  <span class="hljs-comment"># link against the boost libraries</span>
+  <span class="hljs-keyword">target_link_libraries</span>( third_party_include
+      PRIVATE
+      <span class="hljs-variable">${Boost_SYSTEM_LIBRARY}</span>
+      <span class="hljs-variable">${Boost_FILESYSTEM_LIBRARY}</span>
+  )
+</code></pre>
+</li>
+</ul>
+<h2 id="&#x4E09;--&#x6784;&#x5EFA;&#x793A;&#x4F8B;">&#x4E09;  &#x6784;&#x5EFA;&#x793A;&#x4F8B;</h2>
+<pre><code class="lang-bash">$ mkdir build
+
+$ <span class="hljs-built_in">cd</span> build/
+
+$ cmake ..&#x2009;&#x2014;&#x2009;The C compiler identification is GNU 4.8.4&#x2009;&#x2014;&#x2009;The CXX compiler identification is GNU 4.8.4&#x2009;&#x2014;&#x2009;Check <span class="hljs-keyword">for</span> working C compiler: /usr/bin/cc&#x2009;&#x2014;&#x2009;Check <span class="hljs-keyword">for</span> working C compiler: /usr/bin/cc&#x2009;&#x2014;&#x2009;works&#x2009;&#x2014;&#x2009;Detecting C compiler ABI info&#x2009;&#x2014;&#x2009;Detecting C compiler ABI info - <span class="hljs-keyword">done</span>&#x2009;&#x2014;&#x2009;Check <span class="hljs-keyword">for</span> working CXX compiler: /usr/bin/c -- Check <span class="hljs-keyword">for</span> working CXX compiler: /usr/bin/c&#x2009;&#x2014;&#x2009;works&#x2009;&#x2014;&#x2009;Detecting CXX compiler ABI info&#x2009;&#x2014;&#x2009;Detecting CXX compiler ABI info - <span class="hljs-keyword">done</span>&#x2009;&#x2014;&#x2009;Boost version: 1.54.0&#x2009;&#x2014;&#x2009;Found the following Boost libraries:&#x2009;&#x2014;&#x2009; filesystem&#x2009;&#x2014;&#x2009; system boost found&#x2009;&#x2014;&#x2009;Configuring <span class="hljs-keyword">done</span>&#x2009;&#x2014;&#x2009;Generating <span class="hljs-keyword">done</span>&#x2009;&#x2014;&#x2009;Build files have been written to: /home/matrim/workspace/cmake-examples/01-basic/H-third-party-library/build
+
+$ make Scanning dependencies of target third_party_include [100%] Building CXX object CMakeFiles/third_party_include.dir/main.cpp.o Linking CXX executable third_party_include [100%] Built target third_party_include matrim@freyr:~/workspace/cmake-examples/01-basic/H-third-party-library/build$ ./ CMakeFiles/ third_party_include matrim@freyr:~/workspace/cmake-examples/01-basic/H-third-party-library/build$ ./third_party_include Hello Third Party Include! Path is not relative $ cmake ..&#x2009;&#x2014;&#x2009;The C compiler identification is GNU 4.8.4&#x2009;&#x2014;&#x2009;The CXX compiler identification is GNU 4.8.4&#x2009;&#x2014;&#x2009;Check <span class="hljs-keyword">for</span> working C compiler: /usr/bin/cc&#x2009;&#x2014;&#x2009;Check <span class="hljs-keyword">for</span> working C compiler: /usr/bin/cc&#x2009;&#x2014;&#x2009;works&#x2009;&#x2014;&#x2009;Detecting C compiler ABI info&#x2009;&#x2014;&#x2009;Detecting C compiler ABI info - <span class="hljs-keyword">done</span>&#x2009;&#x2014;&#x2009;Check <span class="hljs-keyword">for</span> working CXX compiler: /usr/bin/c -- Check <span class="hljs-keyword">for</span> working CXX compiler: /usr/bin/c&#x2009;&#x2014;&#x2009;works&#x2009;&#x2014;&#x2009;Detecting CXX compiler ABI info&#x2009;&#x2014;&#x2009;Detecting CXX compiler ABI info - <span class="hljs-keyword">done</span>&#x2009;&#x2014;&#x2009;Boost version: 1.54.0&#x2009;&#x2014;&#x2009;Found the following Boost libraries:&#x2009;&#x2014;&#x2009; filesystem&#x2009;&#x2014;&#x2009; system boost found&#x2009;&#x2014;&#x2009;Configuring <span class="hljs-keyword">done</span>&#x2009;&#x2014;&#x2009;Generating <span class="hljs-keyword">done</span>&#x2009;&#x2014;&#x2009;Build files have been written to: /home/matrim/workspace/cmake-examples/01-basic/H-third-party-library/build
+
+$ make Scanning dependencies of target third_party_include [100%] Building CXX object CMakeFiles/third_party_include.dir/main.cpp.o Linking CXX executable third_party_include [100%] Built target third_party_include
+
+$ ./third_party_include Hello Third Party Include! Path is not relative
+</code></pre>
+<h2 id="&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;">&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;</h2>
+<p>&#x6B22;&#x8FCE;&#x5927;&#x5BB6;&#x5173;&#x6CE8;&#x6211;&#x7684;&#x4E2A;&#x4EBA;&#x516C;&#x4F17;&#x53F7;&#xFF0C;&#x73B0;&#x9636;&#x6BB5;&#x4E3B;&#x8981;&#x603B;&#x7ED3;Robomaster&#x76F8;&#x5173;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x77E5;&#x8BC6;&#xFF1A;Qt&#xFF0C;C++&#xFF0C;CMake,OpenCV&#x7B49;&#x7B49;
+&#x516C;&#x4F17;&#x53F7;&#x540D;&#x79F0;&#xFF1A;&#x4E09;&#x4E30;&#x6742;&#x8D27;&#x94FA;</p>
+<p><img src="https://img-blog.csdnimg.cn/20200529103009878.gif#pic_center" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.6  Compile Flags.html" class="navigation navigation-prev " aria-label="Previous page: 1.6  设置编译方式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1.8 compiling-with-clang.html" class="navigation navigation-next " aria-label="Next page: 1.8  使用clang编译工程">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.7  包含第三方库","level":"1.2.7","depth":2,"next":{"title":"1.8  使用clang编译工程","level":"1.2.8","depth":2,"path":"01-basic/1.8 compiling-with-clang.adoc","ref":"01-basic/1.8 compiling-with-clang.adoc","articles":[]},"previous":{"title":"1.6  设置编译方式","level":"1.2.6","depth":2,"path":"01-basic/1.6  Compile Flags.md","ref":"01-basic/1.6  Compile Flags.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github-buttons","livereload"],"pluginsConfig":{"github-buttons":{"buttons":[{"user":"SFUMECJF","repo":"cmake-examples-Chinese","type":"star","size":"large"},{"user":"SFUMECJF","type":"follow","width":"230","count":false}]},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"01-basic/1.7  Including Third Party Library.md","mtime":"2020-11-01T10:18:51.757Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-16T08:46:33.216Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

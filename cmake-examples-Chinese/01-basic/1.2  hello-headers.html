@@ -1,0 +1,698 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.2  包含头文件 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1.3  Static Library.html" />
+    
+    
+    <link rel="prev" href="1.1  hello-cmake.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"SFUMECJF","repo":"cmake-examples-Chinese","type":"star","size":"large"},{"user":"SFUMECJF","type":"follow","width":"230","count":false}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1  基本例程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.1  hello-cmake.html">
+            
+                <a href="1.1  hello-cmake.html">
+            
+                    
+                    1.1  hello-CMake
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="1.2  hello-headers.html">
+            
+                <a href="1.2  hello-headers.html">
+            
+                    
+                    1.2  包含头文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1.3  Static Library.html">
+            
+                <a href="1.3  Static Library.html">
+            
+                    
+                    1.3  包含静态库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="1.4  Shared Library.html">
+            
+                <a href="1.4  Shared Library.html">
+            
+                    
+                    1.4  包含动态库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="1.5  build-type.html">
+            
+                <a href="1.5  build-type.html">
+            
+                    
+                    1.5  设置构建类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="1.6  Compile Flags.html">
+            
+                <a href="1.6  Compile Flags.html">
+            
+                    
+                    1.6  设置编译方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="1.7  Including Third Party Library.html">
+            
+                <a href="1.7  Including Third Party Library.html">
+            
+                    
+                    1.7  包含第三方库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="1.8 compiling-with-clang.html">
+            
+                <a href="1.8 compiling-with-clang.html">
+            
+                    
+                    1.8  使用clang编译工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="1.9 J-building-with-ninja.html">
+            
+                <a href="1.9 J-building-with-ninja.html">
+            
+                    
+                    1.9  使用ninja构建工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="1.10 imported-targets.html">
+            
+                <a href="1.10 imported-targets.html">
+            
+                    
+                    1.10  导入目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="1.11 cpp-standard.html">
+            
+                <a href="1.11 cpp-standard.html">
+            
+                    
+                    1.11 C++标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../02-sub-projects/">
+            
+                <a href="../02-sub-projects/">
+            
+                    
+                    子目录中使用多个CMake文件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../02-sub-projects/A-basic/">
+            
+                <a href="../02-sub-projects/A-basic/">
+            
+                    
+                    2.1 使用子工程CMake
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../03-code-generation/">
+            
+                <a href="../03-code-generation/">
+            
+                    
+                    生成源代码
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../03-code-generation/configure-files/">
+            
+                <a href="../03-code-generation/configure-files/">
+            
+                    
+                    3.1  配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../03-code-generation/protobuf/">
+            
+                <a href="../03-code-generation/protobuf/">
+            
+                    
+                    3.2  protobuf
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    细节思考
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../CMake-scope.html">
+            
+                <a href="../CMake-scope.html">
+            
+                    
+                    PUBLIC、INTERFACE和PRIVATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1.2  包含头文件</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="robomaster&#x89C6;&#x89C9;&#x6559;&#x7A0B;cmake&#x4E8C;hello-headers">RoboMaster&#x89C6;&#x89C9;&#x6559;&#x7A0B;CMake(&#x4E8C;)hello-headers</h1>
+<p>&#x672C;CMake&#x7CFB;&#x5217;&#x662F;&#x4F9D;&#x636E;github&#x4E0A;&#x7684;cmake-examples&#x8FDB;&#x884C;&#x7FFB;&#x8BD1;&#x603B;&#x7ED3;&#x3002;&#x540C;&#x65F6;&#x5BF9;&#x4E8E;&#x4E0D;&#x61C2;&#x7684;&#x5730;&#x65B9;&#x8FDB;&#x884C;&#x603B;&#x7ED3;&#x4E0E;&#x6807;&#x6CE8;&#x3002;&#x5E0C;&#x671B;&#x672C;&#x7CFB;&#x5217;&#x80FD;&#x8282;&#x7701;&#x4F60;&#x5B66;&#x4E60;CMake&#x7684;&#x65F6;&#x95F4;&#x3002;</p>
+<p><a href="https://github.com/ttroy50/cmake-examples" target="_blank">&#x82F1;&#x6587;github&#x5730;&#x5740;</a>&#xFF1A;<a href="https://github.com/ttroy50/cmake-examples" target="_blank">https://github.com/ttroy50/cmake-examples</a></p>
+<p>[TOC]</p>
+<h2 id="&#x4E00;--&#x6587;&#x4EF6;&#x6811;">&#x4E00;  &#x6587;&#x4EF6;&#x6811;</h2>
+<pre><code class="lang-tree">&#x251C;&#x2500;&#x2500; CMakeLists.txt
+&#x251C;&#x2500;&#x2500; include
+&#x2502;   &#x2514;&#x2500;&#x2500; Hello.h
+&#x2514;&#x2500;&#x2500; src
+    &#x251C;&#x2500;&#x2500; Hello.cpp
+    &#x2514;&#x2500;&#x2500; main.cpp
+</code></pre>
+<h3 id="11--helloh">1.1  Hello.h</h3>
+<pre><code class="lang-c++"><span class="hljs-comment">/*&#x58F0;&#x660E;&#x4E86;Hello&#x7C7B;&#xFF0C;Hello&#x7684;&#x65B9;&#x6CD5;&#x662F;print(),*/</span>
+
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> __HELLO_H__</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> __HELLO_H__</span>
+
+<span class="hljs-keyword">class</span> Hello
+{
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span></span>;
+};
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+</code></pre>
+<h3 id="12--hellocpp">1.2  Hello.cpp</h3>
+<pre><code class="lang-c++"><span class="hljs-comment">/*&#x5B9E;&#x73B0;&#x4E86;Hello::print()*/</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;Hello.h&quot;</span></span>
+
+<span class="hljs-keyword">void</span> Hello::print()
+{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Hello Headers!&quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+}
+</code></pre>
+<h3 id="13--maincpp">1.3  main.cpp</h3>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;Hello.h&quot;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])</span>
+</span>{
+    Hello hi;
+    hi.print();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h3 id="14--cmakeliststxt">1.4  CMakeLists.txt</h3>
+<pre><code class="lang-cmake"><span class="hljs-keyword">cmake_minimum_required</span>(VERSION <span class="hljs-number">3.5</span>)<span class="hljs-comment">#&#x6700;&#x4F4E;CMake&#x7248;&#x672C;</span>
+
+<span class="hljs-keyword">project</span> (hello_headers)<span class="hljs-comment"># &#x5DE5;&#x7A0B;&#x540D;</span>
+
+<span class="hljs-keyword">set</span>(SOURCES
+    src/Hello.cpp
+    src/main.cpp
+)<span class="hljs-comment">#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x540D;&#x5B57;&#x53EB;SOURCE&#x3002;&#x5B83;&#x5305;&#x542B;&#x4E86;&#x6240;&#x6709;&#x7684;cpp&#x6587;&#x4EF6;&#x3002;</span>
+
+<span class="hljs-keyword">add_executable</span>(hello_headers <span class="hljs-variable">${SOURCES}</span>)<span class="hljs-comment">#&#x7528;&#x6240;&#x6709;&#x7684;&#x6E90;&#x6587;&#x4EF6;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x91CC;&#x5B9A;&#x4E49;&#x4E86;SOURCE&#x53D8;&#x91CF;&#xFF0C;&#x6240;&#x4EE5;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x7F57;&#x5217;cpp&#x6587;&#x4EF6;&#x4E86;</span>
+<span class="hljs-comment">#&#x7B49;&#x4EF7;&#x4E8E;&#x547D;&#x4EE4;&#xFF1A;     add_executable(hello_headers src/Hello.cpp src/main.cpp)</span>
+
+target_include_directories(hello_headers
+    PRIVATE 
+        <span class="hljs-variable">${PROJECT_SOURCE_DIR}</span>/<span class="hljs-keyword">include</span>
+)<span class="hljs-comment">#&#x8BBE;&#x7F6E;&#x8FD9;&#x4E2A;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;hello_headers&#x9700;&#x8981;&#x5305;&#x542B;&#x7684;&#x5E93;&#x7684;&#x8DEF;&#x5F84;</span>
+
+
+<span class="hljs-comment">#PROJECT_SOURCE_DIR&#x6307;&#x5DE5;&#x7A0B;&#x9876;&#x5C42;&#x76EE;&#x5F55;</span>
+<span class="hljs-comment">#PROJECT_Binary_DIR&#x6307;&#x7F16;&#x8BD1;&#x76EE;&#x5F55;</span>
+<span class="hljs-comment">#PRIVATE&#x6307;&#x5B9A;&#x4E86;&#x5E93;&#x7684;&#x8303;&#x56F4;&#xFF0C;&#x4E0B;&#x4E00;&#x8282;&#x8BB2;</span>
+</code></pre>
+<h2 id="&#x4E8C;--cmake&#x89E3;&#x6790;">&#x4E8C;  CMake&#x89E3;&#x6790;</h2>
+<h3 id="21--&#x5404;&#x79CD;&#x53EF;&#x7528;&#x53D8;&#x91CF;">2.1  &#x5404;&#x79CD;&#x53EF;&#x7528;&#x53D8;&#x91CF;</h3>
+<p>CMake&#x8BED;&#x6CD5;&#x6307;&#x5B9A;&#x4E86;&#x8BB8;&#x591A;&#x53D8;&#x91CF;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x5E2E;&#x52A9;&#x60A8;&#x5728;&#x9879;&#x76EE;&#x6216;&#x6E90;&#x4EE3;&#x7801;&#x6811;&#x4E2D;&#x627E;&#x5230;&#x6709;&#x7528;&#x7684;&#x76EE;&#x5F55;&#x3002; &#x5176;&#x4E2D;&#x4E00;&#x4E9B;&#x5305;&#x62EC;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Variable</th>
+<th style="text-align:left">Info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">CMAKE_SOURCE_DIR</td>
+<td style="text-align:left">&#x6839;&#x6E90;&#x4EE3;&#x7801;&#x76EE;&#x5F55;&#xFF0C;&#x5DE5;&#x7A0B;&#x9876;&#x5C42;&#x76EE;&#x5F55;&#x3002;&#x6682;&#x8BA4;&#x4E3A;&#x5C31;&#x662F;PROJECT_SOURCE_DIR</td>
+</tr>
+<tr>
+<td style="text-align:left">CMAKE_CURRENT_SOURCE_DIR</td>
+<td style="text-align:left">&#x5F53;&#x524D;&#x5904;&#x7406;&#x7684; CMakeLists.txt &#x6240;&#x5728;&#x7684;&#x8DEF;&#x5F84;</td>
+</tr>
+<tr>
+<td style="text-align:left">PROJECT_SOURCE_DIR</td>
+<td style="text-align:left">&#x5DE5;&#x7A0B;&#x9876;&#x5C42;&#x76EE;&#x5F55;</td>
+</tr>
+<tr>
+<td style="text-align:left">CMAKE_BINARY_DIR</td>
+<td style="text-align:left">&#x8FD0;&#x884C;cmake&#x7684;&#x76EE;&#x5F55;&#x3002;&#x5916;&#x90E8;&#x6784;&#x5EFA;&#x65F6;&#x5C31;&#x662F;build&#x76EE;&#x5F55;</td>
+</tr>
+<tr>
+<td style="text-align:left">CMAKE_CURRENT_BINARY_DIR</td>
+<td style="text-align:left">The build directory you are currently in.&#x5F53;&#x524D;&#x6240;&#x5728;build&#x76EE;&#x5F55;</td>
+</tr>
+<tr>
+<td style="text-align:left">PROJECT_BINARY_DIR</td>
+<td style="text-align:left">&#x6682;&#x8BA4;&#x4E3A;&#x5C31;&#x662F;CMAKE_BINARY_DIR</td>
+</tr>
+</tbody>
+</table>
+<p>&#x60F3;&#x4ED4;&#x7EC6;&#x4F53;&#x4F1A;&#x4E00;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;CMakeLists&#x4E2D;&#xFF0C;&#x5229;&#x7528;message&#xFF08;&#xFF09;&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x4E00;&#x4E0B;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x5728;CMakeLists&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x5728;&#x6E90;&#x4EE3;&#x7801;.cpp&#x4E2D;&#x4F7F;&#x7528;&#x3002;</p>
+<h3 id="22--&#x6E90;&#x6587;&#x4EF6;&#x53D8;&#x91CF;&#x4E0D;&#x5EFA;&#x8BAE;&#xFF01;">2.2  &#x6E90;&#x6587;&#x4EF6;&#x53D8;&#x91CF;(&#x4E0D;&#x5EFA;&#x8BAE;&#xFF01;)</h3>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E8E;&#x5C06;&#x5176;&#x8F7B;&#x677E;&#x6DFB;&#x52A0;&#x5230;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#x4E2D;&#xFF0C;&#x4F8B;&#x5982;add_executable&#xFF08;&#xFF09;&#x51FD;&#x6570;&#x3002;</p>
+<pre><code class="lang-cmake"><span class="hljs-keyword">set</span>(SOURCES
+    src/Hello.cpp
+    src/main.cpp
+)
+
+<span class="hljs-keyword">add_executable</span>(<span class="hljs-variable">${PROJECT_NAME}</span> <span class="hljs-variable">${SOURCES}</span>)
+</code></pre>
+<p>&#x5728;SOURCES&#x53D8;&#x91CF;&#x4E2D;&#x8BBE;&#x7F6E;&#x7279;&#x5B9A;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#x4F7F;&#x7528;GLOB&#x547D;&#x4EE4;&#x4F7F;&#x7528;&#x901A;&#x914D;&#x7B26;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x6765;&#x67E5;&#x627E;&#x6587;&#x4EF6;&#x3002;<code>file(GLOB SOURCES &quot;src/*.cpp&quot;)</code>&#x4F7F;&#x7528;*&#x8FD9;&#x4E2A;&#x901A;&#x914D;&#x7B26;&#xFF0C;&#x8868;&#x793A;&#x6240;&#x6709;.cpp&#x7ED3;&#x5C3E;&#x7684;&#x6587;&#x4EF6;&#x90FD;&#x4F1A;&#x5305;&#x542B;&#x5230;&#x8FD9;&#x4E2A;SOURCES&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;modern CMake&#xFF0C;<mark>&#x4E0D;&#x5EFA;&#x8BAE;&#x5BF9;&#x6E90;&#x6587;&#x4EF6;&#x4F7F;&#x7528;&#x53D8;&#x91CF;&#x3002;</mark> &#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;glob&#x3002;</p>
+<p>&#x76F8;&#x53CD;&#xFF0C;&#x901A;&#x5E38;&#x76F4;&#x63A5;&#x5728;add_xxx&#x51FD;&#x6570;&#x4E2D;&#x58F0;&#x660E;&#x6E90;&#x6587;&#x4EF6;&#x3002; </p>
+<p>&#x8FD9;&#x5BF9;&#x4E8E;glob&#x547D;&#x4EE4;&#x5C24;&#x5176;&#x91CD;&#x8981;&#xFF0C;&#x5982;&#x679C;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x6E90;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E9B;&#x547D;&#x4EE4;&#x53EF;&#x80FD;&#x4E0D;&#x4F1A;&#x59CB;&#x7EC8;&#x4E3A;&#x60A8;&#x663E;&#x793A;&#x6B63;&#x786E;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x5728;CMake&#x4E2D;&#x6307;&#x5B9A;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x6700;&#x4F73;&#x65B9;&#x6CD5;&#x662F;&#x660E;&#x786E;&#x5217;&#x51FA;&#x5B83;&#x4EEC;&#x3002;</p>
+<h3 id="23--&#x5305;&#x542B;&#x76EE;&#x5F55;">2.3  &#x5305;&#x542B;&#x76EE;&#x5F55;</h3>
+<p>&#x5F53;&#x60A8;&#x6709;&#x5176;&#x4ED6;&#x9700;&#x8981;&#x5305;&#x542B;&#x7684;&#x6587;&#x4EF6;&#x5939;&#xFF08;&#x6587;&#x4EF6;&#x5939;&#x91CC;&#x6709;&#x5934;&#x6587;&#x4EF6;&#xFF09;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x4F7F;&#x7F16;&#x8BD1;&#x5668;&#x77E5;&#x9053;&#x5B83;&#x4EEC;&#xFF1A; target_include_directories&#xFF08;&#xFF09;&#x3002; &#x7F16;&#x8BD1;&#x6B64;&#x76EE;&#x6807;&#x65F6;&#xFF0C;&#x8FD9;&#x5C06;&#x4F7F;&#x7528;-I&#x6807;&#x5FD7;&#x5C06;&#x8FD9;&#x4E9B;&#x76EE;&#x5F55;&#x6DFB;&#x52A0;&#x5230;&#x7F16;&#x8BD1;&#x5668;&#x4E2D;&#xFF0C;&#x4F8B;&#x5982; -I /&#x76EE;&#x5F55;/&#x8DEF;&#x5F84;</p>
+<pre><code class="lang-cmake">target_include_directories(target
+    PRIVATE
+        <span class="hljs-variable">${PROJECT_SOURCE_DIR}</span>/<span class="hljs-keyword">include</span>
+)
+</code></pre>
+<p>PRIVATE  &#x6807;&#x8BC6;&#x7B26;&#x6307;&#x5B9A;&#x5305;&#x542B;&#x7684;&#x8303;&#x56F4;&#x3002; &#x8FD9;&#x5BF9;&#x5E93;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x5C06;&#x5728;&#x4E0B;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x4E2D;&#x8FDB;&#x884C;&#x8BF4;&#x660E;&#x3002; &#x6709;&#x5173;&#x8BE5;&#x529F;&#x80FD;&#x7684;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;&#x4EE5;&#x4E0B;&#x94FE;&#x63A5;&#xFF1A;https&#xFF1A;//cmake.org/cmake/help/v3.0/command/target_include_directories.html </p>
+<h3 id="24--&#x8BE6;&#x7EC6;&#x8F93;&#x51FA;">2.4  &#x8BE6;&#x7EC6;&#x8F93;&#x51FA;</h3>
+<p>&#x5728;&#x524D;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x8FD0;&#x884C;make&#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x8F93;&#x51FA;&#x4EC5;&#x663E;&#x793A;&#x6784;&#x5EFA;&#x72B6;&#x6001;&#x3002; &#x8981;&#x67E5;&#x770B;&#x7528;&#x4E8E;&#x8C03;&#x8BD5;&#x76EE;&#x7684;&#x7684;&#x5B8C;&#x6574;&#x8F93;&#x51FA;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x8FD0;&#x884C;make&#x65F6;&#x6DFB;&#x52A0;VERBOSE = 1&#x6807;&#x5FD7;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x4F7F;&#x7528;VERBOSE&#x7684;&#x547D;&#x4EE4;</p>
+<pre><code class="lang-shell">mkdir build
+cd build/
+cmake ..
+make VERBOSE=1
+</code></pre>
+<p> &#x6CA1;&#x6709;VERBOSE&#xFF1A;</p>
+<pre><code class="lang-shell">make
+Scanning dependencies of target hello_headers
+[ 50%] Building CXX object CMakeFiles/hello_headers.dir/src/Hello.cpp.o
+[100%] Building CXX object CMakeFiles/hello_headers.dir/src/main.cpp.o
+Linking CXX executable hello_headers
+[100%] Built target hello_headers
+</code></pre>
+<p>&#x6709;VERBOSE&#xFF1A;</p>
+<pre><code class="lang-shell">make VERBOSE=1
+/usr/bin/cmake -H/home/matrim/workspace/cmake-examples/01-basic/hello_headers -B/home/matrim/workspace/cmake-examples/01-basic/hello_headers/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/matrim/workspace/cmake-examples/01-basic/hello_headers/build/CMakeFiles /home/matrim/workspace/cmake-examples/01-basic/hello_headers/build/CMakeFiles/progress.marks
+make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory `/home/matrim/workspace/cmake-examples/01-basic/hello_headers/build&apos;
+make -f CMakeFiles/hello_headers.dir/build.make CMakeFiles/hello_headers.dir/depend
+make[2]: Entering directory `/home/matrim/workspace/cmake-examples/01-basic/hello_headers/build&apos;
+cd /home/matrim/workspace/cmake-examples/01-basic/hello_headers/build &amp;&amp; /usr/bin/cmake -E cmake_depends &quot;Unix Makefiles&quot; /home/matrim/workspace/cmake-examples/01-basic/hello_headers /home/matrim/workspace/cmake-examples/01-basic/hello_headers /home/matrim/workspace/cmake-examples/01-basic/hello_headers/build /home/matrim/workspace/cmake-examples/01-basic/hello_headers/build /home/matrim/workspace/cmake-examples/01-basic/hello_headers/build/CMakeFiles/hello_headers.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/matrim/workspace/cmake-examples/01-basic/hello_headers/build&apos;
+make -f CMakeFiles/hello_headers.dir/build.make CMakeFiles/hello_headers.dir/build
+make[2]: Entering directory `/home/matrim/workspace/cmake-examples/01-basic/hello_headers/build&apos;
+/usr/bin/cmake -E cmake_progress_report /home/matrim/workspace/cmake-examples/01-basic/hello_headers/build/CMakeFiles 1
+[ 50%] Building CXX object CMakeFiles/hello_headers.dir/src/Hello.cpp.o
+/usr/bin/c++    -I/home/matrim/workspace/cmake-examples/01-basic/hello_headers/include    -o CMakeFiles/hello_headers.dir/src/Hello.cpp.o -c /home/matrim/workspace/cmake-examples/01-basic/hello_headers/src/Hello.cpp
+/usr/bin/cmake -E cmake_progress_report /home/matrim/workspace/cmake-examples/01-basic/hello_headers/build/CMakeFiles 2
+[100%] Building CXX object CMakeFiles/hello_headers.dir/src/main.cpp.o
+/usr/bin/c++    -I/home/matrim/workspace/cmake-examples/01-basic/hello_headers/include    -o CMakeFiles/hello_headers.dir/src/main.cpp.o -c /home/matrim/workspace/cmake-examples/01-basic/hello_headers/src/main.cpp
+Linking CXX executable hello_headers
+/usr/bin/cmake -E cmake_link_script CMakeFiles/hello_headers.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/hello_headers.dir/src/Hello.cpp.o CMakeFiles/hello_headers.dir/src/main.cpp.o  -o hello_headers -rdynamic
+make[2]: Leaving directory `/home/matrim/workspace/cmake-examples/01-basic/hello_headers/build&apos;
+/usr/bin/cmake -E cmake_progress_report /home/matrim/workspace/cmake-examples/01-basic/hello_headers/build/CMakeFiles  1 2
+[100%] Built target hello_headers
+make[1]: Leaving directory `/home/matrim/workspace/cmake-examples/01-basic/hello_headers/build&apos;
+/usr/bin/cmake -E cmake_progress_start /home/matrim/workspace/cmake-examples/01-basic/hello_headers/build/CMakeFiles 0
+</code></pre>
+<h2 id="&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;">&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;</h2>
+<p>&#x6B22;&#x8FCE;&#x5927;&#x5BB6;&#x5173;&#x6CE8;&#x6211;&#x7684;&#x4E2A;&#x4EBA;&#x516C;&#x4F17;&#x53F7;&#xFF0C;&#x73B0;&#x9636;&#x6BB5;&#x4E3B;&#x8981;&#x603B;&#x7ED3;Robomaster&#x76F8;&#x5173;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x77E5;&#x8BC6;&#x3002;
+&#x516C;&#x4F17;&#x53F7;&#x540D;&#x79F0;&#xFF1A;&#x4E09;&#x4E30;&#x6742;&#x8D27;&#x94FA;
+<img src="https://img-blog.csdnimg.cn/20200316110807276.jpg" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.1  hello-cmake.html" class="navigation navigation-prev " aria-label="Previous page: 1.1  hello-CMake">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1.3  Static Library.html" class="navigation navigation-next " aria-label="Next page: 1.3  包含静态库">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.2  包含头文件","level":"1.2.2","depth":2,"next":{"title":"1.3  包含静态库","level":"1.2.3","depth":2,"path":"01-basic/1.3  Static Library.md","ref":"01-basic/1.3  Static Library.md","articles":[]},"previous":{"title":"1.1  hello-CMake","level":"1.2.1","depth":2,"path":"01-basic/1.1  hello-cmake.md","ref":"01-basic/1.1  hello-cmake.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github-buttons","livereload"],"pluginsConfig":{"github-buttons":{"buttons":[{"user":"SFUMECJF","repo":"cmake-examples-Chinese","type":"star","size":"large"},{"user":"SFUMECJF","type":"follow","width":"230","count":false}]},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"01-basic/1.2  hello-headers.md","mtime":"2020-11-08T10:45:34.141Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-16T07:10:17.237Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
