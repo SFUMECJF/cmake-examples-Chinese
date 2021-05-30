@@ -1,9 +1,26 @@
+这三个属性在不同命令中有不同的含义。
+我把它总结为一个表格，如果看不太明白，再看下方的翻译。
+
+![在这里插入图片描述](https://gitee.com/umecjf/figures/raw/master/2020051109320685.png)
+
+
+
+下面的内容均来自Cmake英文官方手册。主要是翻译了三处CMake手册的介绍。
+
+
+对于target_link_libraries（）我认为这三个变量是用来控制库传递过程中，库所包含的依赖是否也能被连接到这个库的其他目标所包含。同时，这个手册建议，根据库的cpp以及库的h(注意不是工程)是否用到依赖，来设置这个依赖的scope范围。
+
+对于target_include_directories()这三个关键词设置了这个目录A会被包含到目标B的哪个属性，同时，在使用target_link_libraries（）将目标B链接给目标C的时候，B所包含的目录也会因为关键字的设置而决定是否能被C包含。
+
+英文原文：
+
 https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html#build-specification-and-usage-requirements
+英文翻译：
 
 传递用法要求
 目标的使用要求可以传递给依赖对象。 target_link_libraries（）命令具有PRIVATE，INTERFACE和PUBLIC关键字来控制传播使用要求。
 
-```cmake
+```c
 add_library(archive archive.cpp)
 target_compile_definitions(archive INTERFACE USING_ARCHIVE_LIB)
 
@@ -32,20 +49,9 @@ target_link_libraries(archiveExtras
   PRIVATE serialization
 )
 ```
-
-通过从依赖关系中读取目标属性的INTERFACE变量，并将这些值附加到operad的非INTERFACE变量中来传播使用需求。例如，读取依赖项的INTERFACE_INCLUDE_DIRECTORIES，并将其附加到操作数的INCLUDE_DIRECTORIES上。如果订单是相关的并得以维护，并且由target_link_libraries（）调用产生的订单不允许正确编译，则使用适当的命令直接设置属性可能会更新订单。
-例如，如果必须以lib1 lib2 lib3的顺序指定目标的链接库，那么必须以lib3 lib1 lib2的顺序指定include目录：
-
-```cmake
-target_link_libraries(myExe lib1 lib2 lib3)
-target_include_directories(myExe
-PRIVATE $<TARGET_PROPERTY:INTERFACE_INCLUDE_DIRECTORIES:lib3>)
-```
-
-
-
- https://cmake.org/cmake/help/latest/command/target_include_directories.html 
-
+英文原文：
+https://cmake.org/cmake/help/latest/command/target_include_directories.html 
+英文翻译：
 target_include_directories
 将包含目录添加到目标。
 
@@ -63,23 +69,10 @@ INTERFACE，PUBLIC和PRIVATE关键字来指定以下参数的范围。 PRIVATE�
 
 指定的包含目录可以是绝对路径或相对路径。对相同<target>的重复调用将按调用顺序追加项目。如果指定了SYSTEM，则会在某些平台上告知编译器目录为系统包含目录（对此设置进行信号化可能会产生效果，例如编译器跳过警告，或者在依赖性计算中不考虑这些固定安装的系统文件-请参阅编译器文档）。如果将SYSTEM与PUBLIC或INTERFACE一起使用，则INTERFACE_SYSTEM_INCLUDE_DIRECTORIES目标属性将使用指定的目录填充。
 
-target_include_directories的参数可以使用语法为<< ...>的“生成器表达式”。有关可用表达式，请参见cmake-generator-expressions（7）手册。有关定义构建系统属性的更多信息，请参见cmake-buildsystem（7）手册。
 
-包含目录的使用要求通常在构建树和安装树之间有所不同。 BUILD_INTERFACE和INSTALL_INTERFACE生成器表达式可用于根据使用位置来描述单独的使用要求。相对路径在INSTALL_INTERFACE表达式中允许，并且相对于安装前缀进行解释。例如：
-
-target_include_directories（mylib PUBLIC
- $ <BUILD_INTERFACE：$ {CMAKE_CURRENT_SOURCE_DIR} / include / mylib>
- $ <INSTALL_INTERFACE：include / mylib>＃<前缀> / include / mylib
-）
-创建可重定位软件包
-请注意，建议不要使用指向依赖项包含目录的绝对路径来填充目标的INTERFACE_INCLUDE_DIRECTORIES的INSTALL_INTERFACE。这将把包含依赖项的包含目录路径硬编码到已安装的软件包中，如在制作软件包的计算机上所发现的。
-
-INTERFACE_INCLUDE_DIRECTORIES的INSTALL_INTERFACE仅适合为目标本身提供的标头指定必需的包含目录，而不是为其INTERFACE_LINK_LIBRARIES目标属性中列出的传递性依赖关系提供的目录。这些依赖关系本身应该是在INTERFACE_INCLUDE_DIRECTORIES中指定其自己的标头位置的目标。
-
-请参阅cmake-packages（7）手册的“创建可重定位软件包”部分，以了解在创建用于重新分发的软件包时指定使用要求时必须采取的其他措施。
-
+英文原文：
  https://cmake.org/cmake/help/latest/command/target_link_libraries.html?highlight=target_link_libraries#libraries-for-both-a-target-and-its-dependents 
-
+ 英文翻译：
 ```cmake
 target_link_libraries(<target> <item>...)
 ```
@@ -88,3 +81,6 @@ target_link_libraries(<target> <item>...)
 
 这个可传递的“链接接口”存储在INTERFACE_LINK_LIBRARIES目标属性中，可以直接设置该属性。 当CMP0022未设置为NEW时，将建立传递链接，但可被LINK_INTERFACE_LIBRARIES属性覆盖。 调用此命令的其他签名可能会设置该属性，从而使由该签名专有链接的任何库都变为私有。
 
+欢迎关注我的公众号一起交流讨论：
+公众号名称：三丰杂货铺
+![在这里插入图片描述](https://gitee.com/umecjf/figures/raw/master/2020051109320685.png)
