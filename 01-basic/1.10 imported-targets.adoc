@@ -1,17 +1,14 @@
-= Imported Targets
+= 导入第三方库到目标
 :toc:
 :toc-placement!:
 
 toc::[]
 
-## Introduction
+## 介绍
 
-As previously mentioned in the link:../H-third-party-library[third party library], newer
-versions of CMake allow you to link third party libraries using link:https://cmake.org/cmake/help/v3.6/prop_tgt/IMPORTED.html#prop_tgt:IMPORTED[imported] +ALIAS+ targets.如先前在第三方库中所述，较新版本的CMake允许您使用导入的ALIAS目标链接第三方库。
+如先前在第三方库中所述，较新版本的CMake允许您使用导入的ALIASlink:https://cmake.org/cmake/help/v3.6/prop_tgt/IMPORTED.html#prop_tgt:IMPORTED[imported]目标链接第三方库。
 
-本教程中的文件如下
-
-The files in this tutorial are below:
+本教程中的文件树如下:
 
 ```
 $ tree
@@ -20,24 +17,22 @@ $ tree
 ├── main.cpp
 ```
 
-  * link:CMakeLists.txt[] - Contains the CMake commands you wish to run
-  * link:main.cpp[] - The source file with main
+  * link:CMakeLists.txt[] - CMake指令
+  * link:main.cpp[] - 源文件
 
-## Requirements
-
-This example requires the following:
+## 环境版本
 
   * CMake v3.5+
-  * The boost libraries to be installed in a default system location. 安装在默认位置的boost库
+  *  安装在默认位置的boost库
 
-## Concepts
+## 解析
 
-### Imported Target
+### 导入目标
 
-Imported targets are read-only targets that are exported by FindXXX modules. Imported targets是FindXXX模块导出的只读目标。
+Imported targets是FindXXX模块导出的只读目标。
 
 
-To include boost filesystem you can do the following:要包含boost文件系统，您可以执行以下操作：
+在CMake命令中包含boost这个库：
 
 [source,cmake]
 ----
@@ -47,10 +42,9 @@ To include boost filesystem you can do the following:要包含boost文件系统�
   )
 ----
 
-This will automtaically link the Boost::filesystem and Boost::system libraries while also including the
-Boost include directories.这将自动链接Boost :: filesystem和Boost :: system库，同时还包括Boost 头文件目录。
+作用是自动链接Boost :: filesystem和Boost :: system库，同时还包括Boost 头文件目录。
 
-## Building the Example
+## 编译例子
 
 [source,bash]
 ----

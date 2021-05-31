@@ -430,36 +430,32 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="imported-targets">Imported Targets</h1>
+                                <h1 id="&#x5BFC;&#x5165;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x5230;&#x76EE;&#x6807;">&#x5BFC;&#x5165;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x5230;&#x76EE;&#x6807;</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_introduction">Introduction</a></li>
-<li><a href="#_requirements">Requirements</a></li>
-<li><a href="#_concepts">Concepts</a>
+<li><a href="#__">&#x4ECB;&#x7ECD;</a></li>
+<li><a href="#___2">&#x73AF;&#x5883;&#x7248;&#x672C;</a></li>
+<li><a href="#___3">&#x89E3;&#x6790;</a>
 <ul class="sectlevel2">
-<li><a href="#_imported_target">Imported Target</a></li>
+<li><a href="#___4">&#x5BFC;&#x5165;&#x76EE;&#x6807;</a></li>
 </ul>
 </li>
-<li><a href="#_building_the_example">Building the Example</a></li>
+<li><a href="#___5">&#x7F16;&#x8BD1;&#x4F8B;&#x5B50;</a></li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_introduction">Introduction</h2>
+<h2 id="__">&#x4ECB;&#x7ECD;</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>As previously mentioned in the <a href="../H-third-party-library">third party library</a>, newer
-versions of CMake allow you to link third party libraries using <a href="https://cmake.org/cmake/help/v3.6/prop_tgt/IMPORTED.html#prop_tgt:IMPORTED" target="_blank">imported</a> ALIAS targets.&#x5982;&#x5148;&#x524D;&#x5728;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x4E2D;&#x6240;&#x8FF0;&#xFF0C;&#x8F83;&#x65B0;&#x7248;&#x672C;&#x7684;CMake&#x5141;&#x8BB8;&#x60A8;&#x4F7F;&#x7528;&#x5BFC;&#x5165;&#x7684;ALIAS&#x76EE;&#x6807;&#x94FE;&#x63A5;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x3002;</p>
+<p>&#x5982;&#x5148;&#x524D;&#x5728;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x4E2D;&#x6240;&#x8FF0;&#xFF0C;&#x8F83;&#x65B0;&#x7248;&#x672C;&#x7684;CMake&#x5141;&#x8BB8;&#x60A8;&#x4F7F;&#x7528;&#x5BFC;&#x5165;&#x7684;ALIAS<a href="https://cmake.org/cmake/help/v3.6/prop_tgt/IMPORTED.html#prop_tgt:IMPORTED" target="_blank">imported</a>&#x76EE;&#x6807;&#x94FE;&#x63A5;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x3002;</p>
 </div>
 <div class="paragraph">
-<p>&#x672C;&#x6559;&#x7A0B;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x5982;&#x4E0B;</p>
-</div>
-<div class="paragraph">
-<p>The files in this tutorial are below:</p>
+<p>&#x672C;&#x6559;&#x7A0B;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x6811;&#x5982;&#x4E0B;:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -472,43 +468,40 @@ versions of CMake allow you to link third party libraries using <a href="https:/
 <div class="ulist">
 <ul>
 <li>
-<p><a href="CMakeLists.txt" class="bare">CMakeLists.txt</a> - Contains the CMake commands you wish to run</p>
+<p><a href="CMakeLists.txt" class="bare">CMakeLists.txt</a> - CMake&#x6307;&#x4EE4;</p>
 </li>
 <li>
-<p><a href="main.cpp" class="bare">main.cpp</a> - The source file with main</p>
+<p><a href="main.cpp" class="bare">main.cpp</a> - &#x6E90;&#x6587;&#x4EF6;</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_requirements">Requirements</h2>
+<h2 id="___2">&#x73AF;&#x5883;&#x7248;&#x672C;</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>This example requires the following:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
 <p>CMake v3.5+</p>
 </li>
 <li>
-<p>The boost libraries to be installed in a default system location. &#x5B89;&#x88C5;&#x5728;&#x9ED8;&#x8BA4;&#x4F4D;&#x7F6E;&#x7684;boost&#x5E93;</p>
+<p>&#x5B89;&#x88C5;&#x5728;&#x9ED8;&#x8BA4;&#x4F4D;&#x7F6E;&#x7684;boost&#x5E93;</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_concepts">Concepts</h2>
+<h2 id="___3">&#x89E3;&#x6790;</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_imported_target">Imported Target</h3>
+<h3 id="___4">&#x5BFC;&#x5165;&#x76EE;&#x6807;</h3>
 <div class="paragraph">
-<p>Imported targets are read-only targets that are exported by FindXXX modules. Imported targets&#x662F;FindXXX&#x6A21;&#x5757;&#x5BFC;&#x51FA;&#x7684;&#x53EA;&#x8BFB;&#x76EE;&#x6807;&#x3002;</p>
+<p>Imported targets&#x662F;FindXXX&#x6A21;&#x5757;&#x5BFC;&#x51FA;&#x7684;&#x53EA;&#x8BFB;&#x76EE;&#x6807;&#x3002;</p>
 </div>
 <div class="paragraph">
-<p>To include boost filesystem you can do the following:&#x8981;&#x5305;&#x542B;boost&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<p>&#x5728;CMake&#x547D;&#x4EE4;&#x4E2D;&#x5305;&#x542B;boost&#x8FD9;&#x4E2A;&#x5E93;&#xFF1A;</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -518,15 +511,19 @@ versions of CMake allow you to link third party libraries using <a href="https:/
   )</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>This will automtaically link the Boost::filesystem and Boost::system libraries while also including the
-Boost include directories.&#x8FD9;&#x5C06;&#x81EA;&#x52A8;&#x94FE;&#x63A5;Boost :: filesystem&#x548C;Boost :: system&#x5E93;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x5305;&#x62EC;Boost &#x5934;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x3002;</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">&#x4F5C;&#x7528;&#x662F;&#x81EA;&#x52A8;&#x94FE;&#x63A5;Boost </dt>
+<dd>
+<p>filesystem&#x548C;Boost :: system&#x5E93;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x5305;&#x62EC;Boost &#x5934;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x3002;</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_building_the_example">Building the Example</h2>
+<h2 id="___5">&#x7F16;&#x8BD1;&#x4F8B;&#x5B50;</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
@@ -614,7 +611,7 @@ Path is not relative</code></pre>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.10  导入目标","level":"1.2.10","depth":2,"next":{"title":"1.11 C++标准","level":"1.2.11","depth":2,"path":"01-basic/1.11 cpp-standard.adoc","ref":"01-basic/1.11 cpp-standard.adoc","articles":[]},"previous":{"title":"1.9  使用ninja构建工程","level":"1.2.9","depth":2,"path":"01-basic/1.9 J-building-with-ninja.adoc","ref":"01-basic/1.9 J-building-with-ninja.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github-buttons","livereload"],"pluginsConfig":{"github-buttons":{"buttons":[{"user":"SFUMECJF","repo":"cmake-examples-Chinese","type":"star","size":"large"},{"user":"SFUMECJF","type":"follow","width":"230","count":false}]},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"01-basic/1.10 imported-targets.adoc","mtime":"2021-05-16T06:03:46.079Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2021-05-16T08:46:33.216Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.10  导入目标","level":"1.2.10","depth":2,"next":{"title":"1.11 C++标准","level":"1.2.11","depth":2,"path":"01-basic/1.11 cpp-standard.adoc","ref":"01-basic/1.11 cpp-standard.adoc","articles":[]},"previous":{"title":"1.9  使用ninja构建工程","level":"1.2.9","depth":2,"path":"01-basic/1.9 J-building-with-ninja.adoc","ref":"01-basic/1.9 J-building-with-ninja.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github-buttons","livereload"],"pluginsConfig":{"github-buttons":{"buttons":[{"user":"SFUMECJF","repo":"cmake-examples-Chinese","type":"star","size":"large"},{"user":"SFUMECJF","type":"follow","width":"230","count":false}]},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"01-basic/1.10 imported-targets.adoc","mtime":"2021-05-30T14:11:46.122Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2021-05-31T02:06:19.674Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
