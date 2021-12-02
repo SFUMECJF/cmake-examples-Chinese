@@ -28,7 +28,9 @@
   </a>
 </p>  
 
-[贡献者主页](https://bye-lemon.github.io/)
+
+仓库受到的关注度越来越高，考虑到大家学习容易出现问题，现在创建一个qq交流群：433323162。微信群可以扫码加入。    
+
 
 # cmake-examples-Chinese
 
