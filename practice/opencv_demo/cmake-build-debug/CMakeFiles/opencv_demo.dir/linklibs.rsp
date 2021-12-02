@@ -1,0 +1,1 @@
+  -LD:/Programs/opencvsolution/install/x64/vc16/lib  -lopencv_world3414 -lopencv_img_hash3414 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

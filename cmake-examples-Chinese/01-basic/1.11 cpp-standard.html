@@ -1,0 +1,687 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.11 C++标准 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../02-sub-projects/" />
+    
+    
+    <link rel="prev" href="1.10 imported-targets.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"SFUMECJF","repo":"cmake-examples-Chinese","type":"star","size":"large"},{"user":"SFUMECJF","type":"follow","width":"230","count":false}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1  基本例程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.1  hello-cmake.html">
+            
+                <a href="1.1  hello-cmake.html">
+            
+                    
+                    1.1  hello-CMake
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="1.2  hello-headers.html">
+            
+                <a href="1.2  hello-headers.html">
+            
+                    
+                    1.2  包含头文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1.3  Static Library.html">
+            
+                <a href="1.3  Static Library.html">
+            
+                    
+                    1.3  包含静态库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="1.4  Shared Library.html">
+            
+                <a href="1.4  Shared Library.html">
+            
+                    
+                    1.4  包含动态库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="1.5  build-type.html">
+            
+                <a href="1.5  build-type.html">
+            
+                    
+                    1.5  设置构建类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="1.6  Compile Flags.html">
+            
+                <a href="1.6  Compile Flags.html">
+            
+                    
+                    1.6  设置编译方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="1.7  Including Third Party Library.html">
+            
+                <a href="1.7  Including Third Party Library.html">
+            
+                    
+                    1.7  包含第三方库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="1.8 compiling-with-clang.html">
+            
+                <a href="1.8 compiling-with-clang.html">
+            
+                    
+                    1.8  使用clang编译工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="1.9 J-building-with-ninja.html">
+            
+                <a href="1.9 J-building-with-ninja.html">
+            
+                    
+                    1.9  使用ninja构建工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="1.10 imported-targets.html">
+            
+                <a href="1.10 imported-targets.html">
+            
+                    
+                    1.10  导入目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.11" data-path="1.11 cpp-standard.html">
+            
+                <a href="1.11 cpp-standard.html">
+            
+                    
+                    1.11 C++标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../02-sub-projects/">
+            
+                <a href="../02-sub-projects/">
+            
+                    
+                    子目录中使用多个CMake文件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../02-sub-projects/A-basic/">
+            
+                <a href="../02-sub-projects/A-basic/">
+            
+                    
+                    2.1 使用子工程CMake
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../03-code-generation/">
+            
+                <a href="../03-code-generation/">
+            
+                    
+                    生成源代码
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../03-code-generation/configure-files/">
+            
+                <a href="../03-code-generation/configure-files/">
+            
+                    
+                    3.1  配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../03-code-generation/protobuf/">
+            
+                <a href="../03-code-generation/protobuf/">
+            
+                    
+                    3.2  protobuf
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    细节思考
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../CMake-scope.html">
+            
+                <a href="../CMake-scope.html">
+            
+                    
+                    PUBLIC、INTERFACE和PRIVATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1.11 C++标准</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x8BBE;&#x7F6E;c-&#x6807;&#x51C6;">&#x8BBE;&#x7F6E;C++ &#x6807;&#x51C6;</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x81EA;C  11&#x548C;C  14&#x53D1;&#x884C;&#x4EE5;&#x6765;&#xFF0C;&#x666E;&#x904D;&#x505A;&#x6CD5;&#x662F;&#x8C03;&#x7528;&#x7F16;&#x8BD1;&#x5668;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x6807;&#x51C6;&#x3002; &#x968F;&#x7740;CMake&#x7684;&#x53D1;&#x5C55;&#xFF0C;&#x6709;&#x4E86;&#x65B0;&#x7684;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x6807;&#x51C6;&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x663E;&#x793A;&#x4E86;&#x8BBE;&#x7F6E;C ++&#x6807;&#x51C6;&#x7684;&#x4E0D;&#x540C;&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x53CA;&#x63D0;&#x4F9B;&#x54EA;&#x4E9B;&#x7248;&#x672C;&#x7684;CMake&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>The examples include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="i-common-method">common-method</a>. &#x53EF;&#x4EE5;&#x4E0E;&#x5927;&#x591A;&#x6570;&#x7248;&#x672C;&#x7684;CMake&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x7684;&#x7B80;&#x5355;&#x65B9;&#x6CD5;&#x3002;</p>
+</li>
+<li>
+<p><a href="ii-cxx-standard">cxx-standard</a>. &#x4F7F;&#x7528;CMake v3.1&#x4E2D;&#x5F15;&#x5165;&#x7684;CMAKE_CXX_STANDARD&#x53D8;&#x91CF;&#x3002;</p>
+</li>
+<li>
+<p><a href="iii-compile-features">compile-features</a>. &#x4F7F;&#x7528;CMake v3.1&#x4E2D;&#x5F15;&#x5165;&#x7684;target_compile_features&#x51FD;&#x6570;&#x3002;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_c_standard_common_method">C++ Standard Common Method</h2>
+<div class="sectionbody">
+<!-- toc disabled -->
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction">Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This example shows a common method to set the C Standard. This can be used with most versions of CMake. However, if you are targeting a recent version of CMake there are more convenient methods available.&#x6B64;&#x793A;&#x4F8B;&#x663E;&#x793A;&#x4E86;&#x8BBE;&#x7F6E;C &#x6807;&#x51C6;&#x7684;&#x5E38;&#x7528;&#x65B9;&#x6CD5;&#x3002; &#x53EF;&#x4EE5;&#x4E0E;&#x5927;&#x591A;&#x6570;&#x7248;&#x672C;&#x7684;CMake&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x6709;CMake&#x7684;&#x6700;&#x65B0;&#x7248;&#x672C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x66F4;&#x4FBF;&#x6377;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>The files in this tutorial are below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>A-hello-cmake$ tree
+.
+&#x251C;&#x2500;&#x2500; CMakeLists.txt
+&#x251C;&#x2500;&#x2500; main.cpp</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="CMakeLists.txt">CMakeLists.txt</a> - Contains the CMake commands you wish to run</p>
+</li>
+<li>
+<p><a href="main.cpp">main.cpp</a> - A simple &quot;Hello World&quot; cpp file targeting C++11.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_concepts">Concepts</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_checking_compile_flags">Checking Compile flags</h3>
+<div class="paragraph">
+<p>CMake has support for attempting to compile a program with any flags you pass into the function <code>CMAKE_CXX_COMPILER_FLAG</code>. The result is then stored in a variable that you pass in.CMake&#x652F;&#x6301;&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x7ED9;&#x51FD;&#x6570;CMAKE_CXX_COMPILER_FLAG&#x6765;&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x3002; &#x7136;&#x540E;&#x5C06;&#x7ED3;&#x679C;&#x5B58;&#x50A8;&#x5728;&#x60A8;&#x4F20;&#x9012;&#x7684;&#x53D8;&#x91CF;&#x4E2D;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cmake" data-lang="cmake"><span class="hljs-keyword">include</span>(CheckCXXCompilerFlag)
+CHECK_CXX_COMPILER_FLAG(<span class="hljs-string">&quot;-std=c++11&quot;</span> COMPILER_SUPPORTS_CXX11)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This example will attempt to compile a program with the flag `-std=c11` and store the result in the variable `COMPILER_SUPPORTS_CXX11`.&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x5C06;flag &#x201C;-std=c11&#x201D;&#x4F20;&#x9012;&#x7ED9;&#x53D8;&#x91CF;COMPILER_SUPPORTS_CXX11</p>
+</div>
+<div class="paragraph">
+<p>The line <code>include(CheckCXXCompilerFlag)</code> tells CMake to include this function to make it available for use.
+&#x60F3;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5FC5;&#x987B;&#x4F7F;&#x7528;include(CheckCXXCompilerFlag)&#x5305;&#x542B;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_adding_the_flag">Adding the flag</h3>
+<div class="paragraph">
+<p>Once you have determined if the compile supports a flag, you can then use the <a href="../../G-compile-flags">standard cmake methods</a> to add this flag to a target. In this example we use the <code>CMAKE_CXX_FLAGS</code> to propegate the flag to all targets .&#x786E;&#x5B9A;&#x7F16;&#x8BD1;&#x5668;&#x662F;&#x5426;&#x652F;&#x6301;&#x6807;&#x5FD7;&#x540E;&#xFF0C;&#x5373;&#x53EF;&#x4F7F;&#x7528;&#x6807;&#x51C6;cmake&#x65B9;&#x6CD5;&#x5C06;&#x6B64;&#x6807;&#x5FD7;&#x6DFB;&#x52A0;&#x5230;&#x76EE;&#x6807;&#x3002; &#x5728;&#x6B64;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;CMAKE_CXX_FLAGS&#x5C06;&#x6807;&#x5FD7;&#xFF08;c++&#x6807;&#x51C6;&#xFF09;&#x4F20;&#x64AD;&#x7ED9;&#x6240;&#x6709;&#x76EE;&#x6807;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cmake" data-lang="cmake"><span class="hljs-keyword">if</span>(COMPILER_SUPPORTS_CXX11)<span class="hljs-comment">#</span>
+    <span class="hljs-keyword">set</span>(CMAKE_CXX_FLAGS <span class="hljs-string">&quot;${CMAKE_CXX_FLAGS} -std=c++11&quot;</span>)
+<span class="hljs-keyword">elseif</span>(COMPILER_SUPPORTS_CXX0X)<span class="hljs-comment">#</span>
+    <span class="hljs-keyword">set</span>(CMAKE_CXX_FLAGS <span class="hljs-string">&quot;${CMAKE_CXX_FLAGS} -std=c++0x&quot;</span>)
+<span class="hljs-keyword">else</span>()
+    <span class="hljs-keyword">message</span>(STATUS <span class="hljs-string">&quot;The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.&quot;</span>)
+<span class="hljs-keyword">endif</span>()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above example only checks for the gcc version of the compile flags and supports fallback from C++11 to the pre-standardisation C+\0x flag. In real usage you may want to check for C14, or add support for different methods of setting the compile, e.g. `-std=gnu11`&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4EC5;&#x68C0;&#x67E5;&#x7F16;&#x8BD1;&#x6807;&#x5FD7;&#x7684;gcc&#x7248;&#x672C;&#xFF0C;&#x5E76;&#x652F;&#x6301;&#x4ECE;C + 11&#x5230;&#x9884;&#x6807;&#x51C6;&#x5316;C + \ + 0x&#x6807;&#x5FD7;&#x7684;&#x56DE;&#x9000;&#x3002; &#x5728;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x4E2D;&#xFF0C;&#x60A8;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x68C0;&#x67E5;C14&#xFF0C;&#x6216;&#x6DFB;&#x52A0;&#x5BF9;&#x8BBE;&#x7F6E;&#x7F16;&#x8BD1;&#x65B9;&#x6CD5;&#x7684;&#x4E0D;&#x540C;&#x652F;&#x6301;&#xFF0C;&#x4F8B;&#x5982; <code>-std = gnu11</code></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_building_the_examples">Building the Examples</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Below is sample output from building this example.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ mkdir build
+$ <span class="hljs-built_in">cd</span> build
+
+$ cmake ..
+-- The C compiler identification is GNU 4.8.4
+-- The CXX compiler identification is GNU 4.8.4
+-- Check <span class="hljs-keyword">for</span> working C compiler: /usr/bin/cc
+-- Check <span class="hljs-keyword">for</span> working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - <span class="hljs-keyword">done</span>
+-- Check <span class="hljs-keyword">for</span> working CXX compiler: /usr/bin/c++
+-- Check <span class="hljs-keyword">for</span> working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - <span class="hljs-keyword">done</span>
+-- Performing Test COMPILER_SUPPORTS_CXX11
+-- Performing Test COMPILER_SUPPORTS_CXX11 - Success
+-- Performing Test COMPILER_SUPPORTS_CXX0X
+-- Performing Test COMPILER_SUPPORTS_CXX0X - Success
+-- Configuring <span class="hljs-keyword">done</span>
+-- Generating <span class="hljs-keyword">done</span>
+-- Build files have been written to: /data/code/01-basic/L-cpp-standard/i-common-method/build
+
+$ make VERBOSE=1
+/usr/bin/cmake -H/data/code/01-basic/L-cpp-standard/i-common-method -B/data/code/01-basic/L-cpp-standard/i-common-method/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /data/code/01-basic/L-cpp-standard/i-common-method/build/CMakeFiles /data/code/01-basic/L-cpp-standard/i-common-method/build/CMakeFiles/progress.marks
+make <span class="hljs-_">-f</span> CMakeFiles/Makefile2 all
+make[1]: Entering directory `/data/code/01-basic/L-cpp-standard/i-common-method/build<span class="hljs-string">&apos;
+make -f CMakeFiles/hello_cpp11.dir/build.make CMakeFiles/hello_cpp11.dir/depend
+make[2]: Entering directory `/data/code/01-basic/L-cpp-standard/i-common-method/build&apos;</span>
+<span class="hljs-built_in">cd</span> /data/code/01-basic/L-cpp-standard/i-common-method/build &amp;&amp; /usr/bin/cmake -E cmake_depends <span class="hljs-string">&quot;Unix Makefiles&quot;</span> /data/code/01-basic/L-cpp-standard/i-common-method /data/code/01-basic/L-cpp-standard/i-common-method /data/code/01-basic/L-cpp-standard/i-common-method/build /data/code/01-basic/L-cpp-standard/i-common-method/build /data/code/01-basic/L-cpp-standard/i-common-method/build/CMakeFiles/hello_cpp11.dir/DependInfo.cmake --color=
+Dependee <span class="hljs-string">&quot;/data/code/01-basic/L-cpp-standard/i-common-method/build/CMakeFiles/hello_cpp11.dir/DependInfo.cmake&quot;</span> is newer than depender <span class="hljs-string">&quot;/data/code/01-basic/L-cpp-standard/i-common-method/build/CMakeFiles/hello_cpp11.dir/depend.internal&quot;</span>.
+Dependee <span class="hljs-string">&quot;/data/code/01-basic/L-cpp-standard/i-common-method/build/CMakeFiles/CMakeDirectoryInformation.cmake&quot;</span> is newer than depender <span class="hljs-string">&quot;/data/code/01-basic/L-cpp-standard/i-common-method/build/CMakeFiles/hello_cpp11.dir/depend.internal&quot;</span>.
+Scanning dependencies of target hello_cpp11
+make[2]: Leaving directory `/data/code/01-basic/L-cpp-standard/i-common-method/build<span class="hljs-string">&apos;
+make -f CMakeFiles/hello_cpp11.dir/build.make CMakeFiles/hello_cpp11.dir/build
+make[2]: Entering directory `/data/code/01-basic/L-cpp-standard/i-common-method/build&apos;</span>
+/usr/bin/cmake -E cmake_progress_report /data/code/01-basic/L-cpp-standard/i-common-method/build/CMakeFiles 1
+[100%] Building CXX object CMakeFiles/hello_cpp11.dir/main.cpp.o
+/usr/bin/c++    -std=c++11   -o CMakeFiles/hello_cpp11.dir/main.cpp.o -c /data/code/01-basic/L-cpp-standard/i-common-method/main.cpp
+Linking CXX executable hello_cpp11
+/usr/bin/cmake -E cmake_link_script CMakeFiles/hello_cpp11.dir/link.txt --verbose=1
+/usr/bin/c++    -std=c++11    CMakeFiles/hello_cpp11.dir/main.cpp.o  -o hello_cpp11 -rdynamic
+make[2]: Leaving directory `/data/code/01-basic/L-cpp-standard/i-common-method/build<span class="hljs-string">&apos;
+/usr/bin/cmake -E cmake_progress_report /data/code/01-basic/L-cpp-standard/i-common-method/build/CMakeFiles  1
+[100%] Built target hello_cpp11
+make[1]: Leaving directory `/data/code/01-basic/L-cpp-standard/i-common-method/build&apos;</span>
+/usr/bin/cmake -E cmake_progress_start /data/code/01-basic/L-cpp-standard/i-common-method/build/CMakeFiles 0</code></pre>
+</div>
+</div>
+</div>
+</div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.10 imported-targets.html" class="navigation navigation-prev " aria-label="Previous page: 1.10  导入目标">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../02-sub-projects/" class="navigation navigation-next " aria-label="Next page: 子目录中使用多个CMake文件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.11 C++标准","level":"1.2.11","depth":2,"next":{"title":"子目录中使用多个CMake文件","level":"1.3","depth":1,"path":"02-sub-projects/README.adoc","ref":"02-sub-projects/README.adoc","articles":[{"title":"2.1 使用子工程CMake","level":"1.3.1","depth":2,"path":"02-sub-projects/A-basic/README.adoc","ref":"02-sub-projects/A-basic/README.adoc","articles":[]}]},"previous":{"title":"1.10  导入目标","level":"1.2.10","depth":2,"path":"01-basic/1.10 imported-targets.adoc","ref":"01-basic/1.10 imported-targets.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github-buttons","livereload"],"pluginsConfig":{"github-buttons":{"buttons":[{"user":"SFUMECJF","repo":"cmake-examples-Chinese","type":"star","size":"large"},{"user":"SFUMECJF","type":"follow","width":"230","count":false}]},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"01-basic/1.11 cpp-standard.adoc","mtime":"2021-05-31T02:03:00.279Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2021-05-31T02:06:19.674Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

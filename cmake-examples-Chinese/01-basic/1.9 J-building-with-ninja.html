@@ -1,0 +1,792 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.9  使用ninja构建工程 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1.10 imported-targets.html" />
+    
+    
+    <link rel="prev" href="1.8 compiling-with-clang.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"SFUMECJF","repo":"cmake-examples-Chinese","type":"star","size":"large"},{"user":"SFUMECJF","type":"follow","width":"230","count":false}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1  基本例程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.1  hello-cmake.html">
+            
+                <a href="1.1  hello-cmake.html">
+            
+                    
+                    1.1  hello-CMake
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="1.2  hello-headers.html">
+            
+                <a href="1.2  hello-headers.html">
+            
+                    
+                    1.2  包含头文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1.3  Static Library.html">
+            
+                <a href="1.3  Static Library.html">
+            
+                    
+                    1.3  包含静态库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="1.4  Shared Library.html">
+            
+                <a href="1.4  Shared Library.html">
+            
+                    
+                    1.4  包含动态库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="1.5  build-type.html">
+            
+                <a href="1.5  build-type.html">
+            
+                    
+                    1.5  设置构建类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="1.6  Compile Flags.html">
+            
+                <a href="1.6  Compile Flags.html">
+            
+                    
+                    1.6  设置编译方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="1.7  Including Third Party Library.html">
+            
+                <a href="1.7  Including Third Party Library.html">
+            
+                    
+                    1.7  包含第三方库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="1.8 compiling-with-clang.html">
+            
+                <a href="1.8 compiling-with-clang.html">
+            
+                    
+                    1.8  使用clang编译工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.9" data-path="1.9 J-building-with-ninja.html">
+            
+                <a href="1.9 J-building-with-ninja.html">
+            
+                    
+                    1.9  使用ninja构建工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="1.10 imported-targets.html">
+            
+                <a href="1.10 imported-targets.html">
+            
+                    
+                    1.10  导入目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="1.11 cpp-standard.html">
+            
+                <a href="1.11 cpp-standard.html">
+            
+                    
+                    1.11 C++标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../02-sub-projects/">
+            
+                <a href="../02-sub-projects/">
+            
+                    
+                    子目录中使用多个CMake文件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../02-sub-projects/A-basic/">
+            
+                <a href="../02-sub-projects/A-basic/">
+            
+                    
+                    2.1 使用子工程CMake
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../03-code-generation/">
+            
+                <a href="../03-code-generation/">
+            
+                    
+                    生成源代码
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../03-code-generation/configure-files/">
+            
+                <a href="../03-code-generation/configure-files/">
+            
+                    
+                    3.1  配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../03-code-generation/protobuf/">
+            
+                <a href="../03-code-generation/protobuf/">
+            
+                    
+                    3.2  protobuf
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    细节思考
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../CMake-scope.html">
+            
+                <a href="../CMake-scope.html">
+            
+                    
+                    PUBLIC、INTERFACE和PRIVATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1.9  使用ninja构建工程</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="building-with-ninja">Building with ninja</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#__">&#x4ECB;&#x7ECD;</a></li>
+<li><a href="#___2">&#x6587;&#x4EF6;&#x6811;</a></li>
+<li><a href="#___3">&#x89E3;&#x6790;</a>
+<ul class="sectlevel2">
+<li><a href="#___4">&#x751F;&#x6210;&#x5668;</a></li>
+<li><a href="#_calling_a_generator">Calling a Generator</a></li>
+</ul>
+</li>
+<li><a href="#___5">&#x6784;&#x5EFA;&#x793A;&#x4F8B;</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__">&#x4ECB;&#x7ECD;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x5982;&#x524D;&#x6240;&#x8FF0;&#xFF0C;CMake&#x662F;&#x4E00;&#x4E2A;&#x5143;&#x6784;&#x5EFA;&#x7CFB;&#x7EDF;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x4E3A;&#x8BB8;&#x591A;&#x5176;&#x4ED6;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x521B;&#x5EFA;&#x6784;&#x5EFA;&#x6587;&#x4EF6;&#x3002; &#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x5C55;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x8BA9;CMake&#x4F7F;&#x7528;ninja&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x3002;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___2">&#x6587;&#x4EF6;&#x6811;</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ tree
+.
+&#x251C;&#x2500;&#x2500; CMakeLists.txt
+&#x251C;&#x2500;&#x2500; main.cpp</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="CMakeLists.txt" class="bare">CMakeLists.txt</a> - CMake&#x547D;&#x4EE4;</p>
+</li>
+<li>
+<p><a href="main.cpp" class="bare">main.cpp</a> - &#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&quot;Hello World&quot; cpp&#x6587;&#x4EF6;.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___3">&#x89E3;&#x6790;</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="___4">&#x751F;&#x6210;&#x5668;</h3>
+<div class="paragraph">
+<p>CMake  are
+responsible for writing the input files (e.g. Makefiles) for the underlying build system. Running <code>cmake --help</code>
+will show the generators available. For cmake v2.8.12.2 the generators supported
+on my system include:
+CMakehttps://cmake.org/cmake/help/v3.0/manual/cmake-generators.7.html[generators]&#x8D1F;&#x8D23;&#x4E3A;&#x57FA;&#x7840;&#x6784;&#x5EFA;&#x7CFB;&#x7EDF;&#x7F16;&#x5199;&#x8F93;&#x5165;&#x6587;&#x4EF6;&#xFF08;&#x4F8B;&#x5982;Makefile&#xFF09;&#x3002; &#x8FD0;&#x884C;cmake --help&#x5C06;&#x663E;&#x793A;&#x53EF;&#x7528;&#x7684;&#x751F;&#x6210;&#x5668;&#x3002; &#x5BF9;&#x4E8E;cmake v2.8.12.2&#xFF0C;&#x6211;&#x7684;&#x7CFB;&#x7EDF;&#x652F;&#x6301;&#x7684;&#x751F;&#x6210;&#x5668;&#x5305;&#x62EC;&#xFF1A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">Generators
+
+The following generators are available on this platform:
+  Unix Makefiles              = Generates standard UNIX makefiles.
+  Ninja                       = Generates build.ninja files (experimental).
+  CodeBlocks - Ninja          = Generates CodeBlocks project files.
+  CodeBlocks - Unix Makefiles = Generates CodeBlocks project files.
+  Eclipse CDT4 - Ninja        = Generates Eclipse CDT 4.0 project files.
+  Eclipse CDT4 - Unix Makefiles
+                              = Generates Eclipse CDT 4.0 project files.
+  KDevelop3                   = Generates KDevelop 3 project files.
+  KDevelop3 - Unix Makefiles  = Generates KDevelop 3 project files.
+  Sublime Text 2 - Ninja      = Generates Sublime Text 2 project files.
+  Sublime Text 2 - Unix Makefiles
+                              = Generates Sublime Text 2 project files.Generators</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As specified in this <a href="https://stackoverflow.com/questions/25941536/what-is-a-cmake-generator" target="_blank">post</a>,
+CMake includes different types of generators such as Command-Line, IDE, and Extra generators.&#x5982;&#x672C;&#x6587;&#x6240;&#x6307;&#x5B9A;&#xFF0C;CMake&#x5305;&#x62EC;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x4F8B;&#x5982;&#x547D;&#x4EE4;&#x884C;&#xFF0C;IDE&#x548C;&#x5176;&#x4ED6;&#x751F;&#x6210;&#x5668;&#x3002;</p>
+</div>
+<div class="sect3">
+<h4 id="_command_line_build_tool_generators">Command-Line Build Tool Generators&#x547D;&#x4EE4;&#x884C;&#x7F16;&#x8BD1;&#x5DE5;&#x5177;&#x751F;&#x6210;&#x5668;</h4>
+<div class="paragraph">
+<p>These generators are for command-line build tools, like Make and Ninja. The chosen tool chain must be configured prior to generating the build system with CMake.&#x8FD9;&#x4E9B;&#x751F;&#x6210;&#x5668;&#x7528;&#x4E8E;&#x547D;&#x4EE4;&#x884C;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#xFF0C;&#x4F8B;&#x5982;Make&#x548C;Ninja&#x3002; &#x5728;&#x4F7F;&#x7528;CMake&#x751F;&#x6210;&#x6784;&#x5EFA;&#x7CFB;&#x7EDF;&#x4E4B;&#x524D;&#xFF0C;&#x5FC5;&#x987B;&#x5148;&#x914D;&#x7F6E;&#x6240;&#x9009;&#x7684;&#x5DE5;&#x5177;&#x94FE;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>The supported generators include:&#x652F;&#x6301;&#x7684;&#x751F;&#x6210;&#x5668;&#x5305;&#x62EC;&#xFF1A;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Borland Makefiles</p>
+</li>
+<li>
+<p>MSYS Makefiles</p>
+</li>
+<li>
+<p>MinGW Makefiles</p>
+</li>
+<li>
+<p>NMake Makefiles</p>
+</li>
+<li>
+<p>NMake Makefiles JOM</p>
+</li>
+<li>
+<p>Ninja  ninja&#x7528;&#x7684;</p>
+</li>
+<li>
+<p>Unix Makefiles make&#x7528;&#x7684;</p>
+</li>
+<li>
+<p>Watcom WMake</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ide_build_tool_generators">IDE Build Tool Generators</h4>
+<div class="paragraph">
+<p>These generators are for Integrated Development Environments that include their own compiler. Examples are Visual Studio and Xcode which include a compiler natively.&#x8FD9;&#x4E9B;&#x751F;&#x6210;&#x5668;&#x7528;&#x4E8E;&#x81EA;&#x5DF1;&#x6709;&#x7F16;&#x8BD1;&#x5668;&#x7684;IDE&#x3002; &#x793A;&#x4F8B;&#x662F;Visual Studio&#x548C;Xcode&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>The supported generators include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Visual Studio 6</p>
+</li>
+<li>
+<p>Visual Studio 7</p>
+</li>
+<li>
+<p>Visual Studio 7 .NET 2003</p>
+</li>
+<li>
+<p>Visual Studio 8 2005</p>
+</li>
+<li>
+<p>Visual Studio 9 2008</p>
+</li>
+<li>
+<p>Visual Studio 10 2010</p>
+</li>
+<li>
+<p>Visual Studio 11 2012</p>
+</li>
+<li>
+<p>Visual Studio 12 2013</p>
+</li>
+<li>
+<p>Xcode</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_extra_generators">Extra Generators</h4>
+<div class="paragraph">
+<p>These are generators create a configuration to work with an alternative IDE tool and must be included with either an IDE or Command-Line generator.&#x8FD9;&#x4E9B;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x7528;&#x4E8E;&#x5176;&#x4ED6;IDE&#x5DE5;&#x5177;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x5E76;&#x4E14;&#x5FC5;&#x987B;&#x5305;&#x542B;&#x5728;IDE&#x6216;&#x547D;&#x4EE4;&#x884C;&#x751F;&#x6210;&#x5668;&#x4E2D;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>The supported generators include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CodeBlocks</p>
+</li>
+<li>
+<p>CodeLite</p>
+</li>
+<li>
+<p>Eclipse CDT4</p>
+</li>
+<li>
+<p>KDevelop3</p>
+</li>
+<li>
+<p>Kate</p>
+</li>
+<li>
+<p>Sublime Text 2</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In this example ninja is installed via the command <code>sudo apt-get install ninja-build</code>&#x5B89;&#x88C5;ninja&#x7684;&#x547D;&#x4EE4;</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_calling_a_generator">Calling a Generator</h3>
+<div class="paragraph">
+<p>To call a CMake generator you can use the <code>-G</code> command line switch, for example:&#x4F7F;&#x7528;-G&#x53C2;&#x6570;&#x6765;&#x5524;&#x9192;CMake&#x7684;&#x751F;&#x6210;&#x5668;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cmake" data-lang="cmake">cmake .. -G Ninja</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After doing the above CMake will generate the required Ninja build files, which can be run
+from using the <code>ninja</code> command.&#x5B8C;&#x6210;&#x4E0A;&#x8FF0;&#x64CD;&#x4F5C;&#x540E;&#xFF0C;CMake&#x5C06;&#x751F;&#x6210;&#x6240;&#x9700;&#x7684;Ninja&#x6784;&#x5EFA;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;ninja&#x547D;&#x4EE4;&#x8FD0;&#x884C;&#x8BE5;&#x6587;&#x4EF6;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ cmake .. -G Ninja
+
+$ ls
+build.ninja  CMakeCache.txt  CMakeFiles  cmake_install.cmake  rules.ninja</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___5">&#x6784;&#x5EFA;&#x793A;&#x4F8B;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Below is sample output from building this example.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ mkdir build.ninja
+
+$ <span class="hljs-built_in">cd</span> build.ninja/
+
+$ cmake .. -G Ninja
+-- The C compiler identification is GNU 4.8.4
+-- The CXX compiler identification is GNU 4.8.4
+-- Check <span class="hljs-keyword">for</span> working C compiler using: Ninja
+-- Check <span class="hljs-keyword">for</span> working C compiler using: Ninja -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - <span class="hljs-keyword">done</span>
+-- Check <span class="hljs-keyword">for</span> working CXX compiler using: Ninja
+-- Check <span class="hljs-keyword">for</span> working CXX compiler using: Ninja -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - <span class="hljs-keyword">done</span>
+-- Configuring <span class="hljs-keyword">done</span>
+-- Generating <span class="hljs-keyword">done</span>
+-- Build files have been written to: /home/matrim/workspace/cmake-examples/01-basic/J-building-with-ninja/build.ninja
+
+$ ninja -v
+[1/2] /usr/bin/c++     -MMD -MT CMakeFiles/hello_cmake.dir/main.cpp.o -MF <span class="hljs-string">&quot;CMakeFiles/hello_cmake.dir/main.cpp.o.d&quot;</span> -o CMakeFiles/hello_cmake.dir/main.cpp.o -c ../main.cpp
+[2/2] : &amp;&amp; /usr/bin/c++      CMakeFiles/hello_cmake.dir/main.cpp.o  -o hello_cmake  -rdynamic &amp;&amp; :
+
+$ ls
+build.ninja  CMakeCache.txt  CMakeFiles  cmake_install.cmake  hello_cmake  rules.ninja
+
+$ ./hello_cmake
+Hello CMake!</code></pre>
+</div>
+</div>
+</div>
+</div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.8 compiling-with-clang.html" class="navigation navigation-prev " aria-label="Previous page: 1.8  使用clang编译工程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1.10 imported-targets.html" class="navigation navigation-next " aria-label="Next page: 1.10  导入目标">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.9  使用ninja构建工程","level":"1.2.9","depth":2,"next":{"title":"1.10  导入目标","level":"1.2.10","depth":2,"path":"01-basic/1.10 imported-targets.adoc","ref":"01-basic/1.10 imported-targets.adoc","articles":[]},"previous":{"title":"1.8  使用clang编译工程","level":"1.2.8","depth":2,"path":"01-basic/1.8 compiling-with-clang.adoc","ref":"01-basic/1.8 compiling-with-clang.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github-buttons","livereload"],"pluginsConfig":{"github-buttons":{"buttons":[{"user":"SFUMECJF","repo":"cmake-examples-Chinese","type":"star","size":"large"},{"user":"SFUMECJF","type":"follow","width":"230","count":false}]},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"01-basic/1.9 J-building-with-ninja.adoc","mtime":"2021-05-16T06:00:57.004Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2021-05-31T02:06:19.674Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
