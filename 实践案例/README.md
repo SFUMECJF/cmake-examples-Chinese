@@ -38,7 +38,7 @@ target_include_directories(reconstruction PUBLIC
 
 类似Open CV，dcmtk，qt这样的大库，都有动态库和静态库两种。
 
-
+工程查看链接：https://github.com/SFUMECJF/cmake-examples-Chinese/tree/main/%E5%AE%9E%E8%B7%B5%E6%A1%88%E4%BE%8B
 
 ## 互相交流
 

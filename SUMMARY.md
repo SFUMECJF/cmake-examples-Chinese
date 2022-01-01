@@ -18,5 +18,10 @@
 * 3  [生成源代码](03-code-generation/README.adoc)
     - [3.1  配置文件](03-code-generation/configure-files/README.adoc)
     - [3.2  protobuf](03-code-generation/protobuf/README.adoc)
+* 4 [实践案例](https://github.com/SFUMECJF/cmake-examples-Chinese/tree/main/%E5%AE%9E%E8%B7%B5%E6%A1%88%E4%BE%8B)
+    - 4.1 [qt](https://github.com/SFUMECJF/cmake-examples-Chinese/tree/main/%E5%AE%9E%E8%B7%B5%E6%A1%88%E4%BE%8B/qt)
+    - 4.2 [dcmtk](https://github.com/SFUMECJF/cmake-examples-Chinese/tree/main/%E5%AE%9E%E8%B7%B5%E6%A1%88%E4%BE%8B/dcmtk)
+    - 4.3 [opencv](https://github.com/SFUMECJF/cmake-examples-Chinese/tree/main/%E5%AE%9E%E8%B7%B5%E6%A1%88%E4%BE%8B/opencv)
+    - 4.4 [opencv + qt](https://github.com/SFUMECJF/cmake-examples-Chinese/tree/main/%E5%AE%9E%E8%B7%B5%E6%A1%88%E4%BE%8B/qt%2Bopencv)
 * 细节思考  
     - [PUBLIC、INTERFACE和PRIVATE](CMake-scope.md)
