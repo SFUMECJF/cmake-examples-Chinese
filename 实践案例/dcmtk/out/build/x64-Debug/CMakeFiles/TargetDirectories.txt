@@ -1,0 +1,3 @@
+D:/workspace/github_repos/awesome_dcmtk/1-hello_world/hello_dcmtk_cmake/out/build/x64-Debug/CMakeFiles/testapp.dir
+D:/workspace/github_repos/awesome_dcmtk/1-hello_world/hello_dcmtk_cmake/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+D:/workspace/github_repos/awesome_dcmtk/1-hello_world/hello_dcmtk_cmake/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir

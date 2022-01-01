@@ -1,0 +1,37 @@
+"D:\Program Files\clion\CLion 2020.3.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\workspace\github_repos\awesome_dcmtk\1-hello_world\hello_dcmtk_cmake
+-- The C compiler identification is GNU 8.1.0
+-- The CXX compiler identification is GNU 8.1.0
+-- Check for working C compiler: D:/Programs/mingw/mingw64/mingw64/bin/gcc.exe
+-- Check for working C compiler: D:/Programs/mingw/mingw64/mingw64/bin/gcc.exe - works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: D:/Programs/mingw/mingw64/mingw64/bin/g++.exe
+-- Check for working CXX compiler: D:/Programs/mingw/mingw64/mingw64/bin/g++.exe - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-------------
+
+D:\Programs\dcmtkdll\include
+D:\Programs\dcmtkdll\lib
+-- 
+D:\Programs\dcmtkdll
+-- -------------
+
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/workspace/github_repos/awesome_dcmtk/1-hello_world/hello_dcmtk_cmake/cmake-build-debug
+
+Problems were encountered while collecting compiler information:
+	g++.exe: error: /nologo: No such file or directory
+	g++.exe: error: /W3: No such file or directory
+	g++.exe: error: /GX: No such file or directory
+	g++.exe: error: /Gy: No such file or directory
+	g++.exe: error: /YX: No such file or directory
+	g++.exe: error: /MTd: No such file or directory
+	g++.exe: error: /Z7: No such file or directory
+	g++.exe: error: /Od: No such file or directory
