@@ -1,0 +1,65 @@
+The system is: Windows - 10.0.19041 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: D:/Programs/vs/vside/VC/Tools/MSVC/14.28.29910/bin/Hostx64/x64/cl.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.28.29912 版
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+CMakeCCompilerId.c
+Microsoft (R) Incremental Linker Version 14.28.29912.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:CMakeCCompilerId.exe 
+CMakeCCompilerId.obj 
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.exe"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
+
+The C compiler identification is MSVC, found in "D:/workspace/github_repos/awesome_dcmtk/1-hello_world/hello_dcmtk_cmake/out/build/x64-Debug/CMakeFiles/3.19.20122902-MSVC_2/CompilerIdC/CMakeCCompilerId.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: D:/Programs/vs/vside/VC/Tools/MSVC/14.28.29910/bin/Hostx64/x64/cl.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.28.29912 版
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+CMakeCXXCompilerId.cpp
+Microsoft (R) Incremental Linker Version 14.28.29912.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:CMakeCXXCompilerId.exe 
+CMakeCXXCompilerId.obj 
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.exe"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
+
+The CXX compiler identification is MSVC, found in "D:/workspace/github_repos/awesome_dcmtk/1-hello_world/hello_dcmtk_cmake/out/build/x64-Debug/CMakeFiles/3.19.20122902-MSVC_2/CompilerIdCXX/CMakeCXXCompilerId.exe"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: D:/workspace/github_repos/awesome_dcmtk/1-hello_world/hello_dcmtk_cmake/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):d:\programs\vs\vside\common7\ide\commonextensions\microsoft\cmake\Ninja\ninja.exe cmTC_91dce && [1/2] Building C object CMakeFiles\cmTC_91dce.dir\CMakeCCompilerABI.c.obj
+[2/2] Linking C executable cmTC_91dce.exe
+
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: D:/workspace/github_repos/awesome_dcmtk/1-hello_world/hello_dcmtk_cmake/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):d:\programs\vs\vside\common7\ide\commonextensions\microsoft\cmake\Ninja\ninja.exe cmTC_64b3e && [1/2] Building CXX object CMakeFiles\cmTC_64b3e.dir\CMakeCXXCompilerABI.cpp.obj
+[2/2] Linking CXX executable cmTC_64b3e.exe
+
+
+

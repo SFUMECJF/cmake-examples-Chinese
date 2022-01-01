@@ -51,11 +51,13 @@ CMake是一个跨平台的安装（编译）工具，可以用简单的语句来
 ##  本cmake系列介绍
 首先大家学习cmake一定会遇到《cmake practice》这本书，但是纯粹讲理论，如果没有实践的话是学不会的。<mark>learning by doing</mark>是学习各种知识的不二法门。
 
-
-
 另外，在不太大的工程中，其实cmake也不需要钻研到多深入，日后工作用得多了自然就会了。比如说PRIVATE、INTERFACE、PUBLIC这三个参数在实际中的用途，当时请教了wps的一位前辈，最终的理解在这篇文章中[cmake-scope](https://github.com/SFUMECJF/cmake-examples-Chinese/blob/main/CMake-scope.md)。他自己也是偶尔有一次用这三个参数测试了一下，其他时候不怎么关心。
 
 而如果作为在校学生，花费很多时间钻这块内容，不实践也很快会忘掉。所以，基本上cmake写出来，能用就行，学习阶段不要钻牛角尖，工作了再钻研。
+
+如果想要快速入门，直接学习`01-basic`即可，学完就可以动手编写自己的工程了。有时间可以学习`02-sub-projects`以及`03-code-generation`。
+
+另外，大家学习CMake的主要目的还是用于实操，所以本文作者在第4个文件夹`实践案例`中提供了使用CMake包含`Open CV`,`dcmtk`, `qt`的CMake工程，大家可以直接下载使用，根据里面的readme进行初步配置。如果遇到错误可以告诉我，我来修改。
 
 ## 学习途径
 

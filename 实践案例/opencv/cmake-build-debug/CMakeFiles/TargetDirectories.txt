@@ -1,0 +1,3 @@
+D:/workspace/github_repos/cmake-examples-Chinese/practice/opencv_demo/cmake-build-debug/CMakeFiles/opencv_demo.dir
+D:/workspace/github_repos/cmake-examples-Chinese/practice/opencv_demo/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/workspace/github_repos/cmake-examples-Chinese/practice/opencv_demo/cmake-build-debug/CMakeFiles/rebuild_cache.dir

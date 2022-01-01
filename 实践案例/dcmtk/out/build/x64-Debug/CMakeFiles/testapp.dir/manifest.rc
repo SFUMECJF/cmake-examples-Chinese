@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "D:/workspace/github_repos/awesome_dcmtk/1-hello_world/hello_dcmtk_cmake/out/build/x64-Debug/CMakeFiles/testapp.dir/embed.manifest"
