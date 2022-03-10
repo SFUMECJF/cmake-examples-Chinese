@@ -26,7 +26,7 @@ $ tree
 
 CMake生成器（generators）官方教程：https://cmake.org/cmake/help/v3.0/manual/cmake-generators.7.html
 
-负责为基础构建系统编写输入文件（例如Makefile）。 运行cmake --help将显示可用的生成器。 对于cmake v2.8.12.2，我的系统支持的生成器包括：
+我们知道，CMake负责为基础构建系统编写输入文件（例如Makefile）。 运行cmake --help将显示可用的生成器。 对于cmake v2.8.12.2，我的系统支持的生成器包括：
 
 [source,bash]
 ----
@@ -96,7 +96,7 @@ The supported generators include:
 
 [NOTE]
 ====
-In this example ninja is installed via the command `sudo apt-get install ninja-build`安装ninja的命令
+在这个例子中我们可以通过指令`sudo apt-get install ninja-build`来安装ninja
 ====
 
 ### Calling a Generator
