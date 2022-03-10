@@ -24,11 +24,9 @@ $ tree
 
 ### 生成器
 
-CMake  are
-responsible for writing the input files (e.g. Makefiles) for the underlying build system. Running `cmake --help`
-will show the generators available. For cmake v2.8.12.2 the generators supported
-on my system include:
-CMakehttps://cmake.org/cmake/help/v3.0/manual/cmake-generators.7.html[generators]负责为基础构建系统编写输入文件（例如Makefile）。 运行cmake --help将显示可用的生成器。 对于cmake v2.8.12.2，我的系统支持的生成器包括：
+CMake生成器（generators）官方教程：https://cmake.org/cmake/help/v3.0/manual/cmake-generators.7.html
+
+负责为基础构建系统编写输入文件（例如Makefile）。 运行cmake --help将显示可用的生成器。 对于cmake v2.8.12.2，我的系统支持的生成器包括：
 
 [source,bash]
 ----
@@ -49,12 +47,11 @@ The following generators are available on this platform:
                               = Generates Sublime Text 2 project files.Generators
 ----
 
-As specified in this https://stackoverflow.com/questions/25941536/what-is-a-cmake-generator[post],
-CMake includes different types of generators such as Command-Line, IDE, and Extra generators.如本文所指定，CMake包括不同类型的生成器，例如命令行，IDE和其他生成器。
+如本文所指定，CMake包括不同类型的生成器，例如命令行，IDE和其他生成器。
 
 #### Command-Line Build Tool Generators命令行编译工具生成器
 
-These generators are for command-line build tools, like Make and Ninja. The chosen tool chain must be configured prior to generating the build system with CMake.这些生成器用于命令行构建工具，例如Make和Ninja。 在使用CMake生成构建系统之前，必须先配置所选的工具链。
+这些生成器用于命令行构建工具，例如Make和Ninja。 在使用CMake生成构建系统之前，必须先配置所选的工具链。
 
 The supported generators include:支持的生成器包括：
 
@@ -69,7 +66,7 @@ The supported generators include:支持的生成器包括：
 
 #### IDE Build Tool Generators
 
-These generators are for Integrated Development Environments that include their own compiler. Examples are Visual Studio and Xcode which include a compiler natively.这些生成器用于自己有编译器的IDE。 示例是Visual Studio和Xcode。
+这些生成器用于自己有编译器的IDE。 示例是Visual Studio和Xcode。
 
 The supported generators include:
 
@@ -85,7 +82,7 @@ The supported generators include:
 
 #### Extra Generators
 
-These are generators create a configuration to work with an alternative IDE tool and must be included with either an IDE or Command-Line generator.这些生成器，用于其他IDE工具一起使用的配置，并且必须包含在IDE或命令行生成器中。
+这些生成器，用于其他IDE工具一起使用的配置，并且必须包含在IDE或命令行生成器中。
 
 The supported generators include:
 
@@ -104,15 +101,14 @@ In this example ninja is installed via the command `sudo apt-get install ninja-b
 
 ### Calling a Generator
 
-To call a CMake generator you can use the `-G` command line switch, for example:使用-G参数来唤醒CMake的生成器
+使用-G参数来唤醒CMake的生成器，比如：
 
 [source,cmake]
 ----
 cmake .. -G Ninja
 ----
 
-After doing the above CMake will generate the required Ninja build files, which can be run
-from using the `ninja` command.完成上述操作后，CMake将生成所需的Ninja构建文件，可以使用ninja命令运行该文件
+完成上述操作后，CMake将生成所需的Ninja构建文件，可以使用ninja命令运行该文件
 
 [source,bash]
 ----
@@ -124,7 +120,7 @@ build.ninja  CMakeCache.txt  CMakeFiles  cmake_install.cmake  rules.ninja
 
 ## 构建示例
 
-Below is sample output from building this example.
+下面是构建这个例子的示例输出：
 
 [source,bash]
 ----
